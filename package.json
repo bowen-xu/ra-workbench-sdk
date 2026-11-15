@@ -1,0 +1,11 @@
+{
+  "name": "@research-assistant/sdk-project",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "build": "pnpm --filter @research-assistant/workbench-sdk build",
+    "typecheck": "pnpm --filter @research-assistant/core typecheck && pnpm --filter @research-assistant/writing typecheck && pnpm --filter @research-assistant/data typecheck && pnpm --filter @research-assistant/workbench-sdk typecheck"
+  }
+}

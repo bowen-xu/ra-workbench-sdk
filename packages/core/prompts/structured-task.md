@@ -1,0 +1,5 @@
+{{ task }}
+
+{{ contract }}
+
+{{ preferences }}

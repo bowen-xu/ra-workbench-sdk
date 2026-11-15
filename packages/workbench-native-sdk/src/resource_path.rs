@@ -2,7 +2,7 @@
 
 use std::path::{Component, Path, PathBuf};
 
-pub use research_agent_core::workspace::is_recovery_file_name;
+pub use research_agent_api::workspace::is_recovery_file_name;
 
 const MAX_PATH_LENGTH: usize = 1024;
 

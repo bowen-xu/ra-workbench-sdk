@@ -1,0 +1,120 @@
+[
+  {
+    "schemaVersion": 1,
+    "conversationId": "982cc782-c993-4f1e-ae60-8b8faa5f76c0",
+    "seq": 1,
+    "timestampMs": 1792983222862,
+    "requestId": "f1ddb385-e9b8-48ee-ba1d-0e8ccb919200",
+    "payload": {
+      "type": "turnStarted",
+      "turnId": "11dd5332-1632-4871-a117-ca45401a6b97",
+      "contextSnapshotId": "780ccf47-0ac9-411a-b6f8-a62150040bb3",
+      "model": {
+        "providerId": "deepseek",
+        "modelId": "deepseek-v4-pro",
+        "revision": null
+      },
+      "taskKind": "compact"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "982cc782-c993-4f1e-ae60-8b8faa5f76c0",
+    "seq": 2,
+    "timestampMs": 1792983222870,
+    "requestId": "f1ddb385-e9b8-48ee-ba1d-0e8ccb919200",
+    "payload": {
+      "type": "itemStarted",
+      "turnId": "11dd5332-1632-4871-a117-ca45401a6b97",
+      "itemId": "01a17620-ca54-7fd1-811e-044bfc2226ca",
+      "kind": {
+        "type": "contextCompaction"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "982cc782-c993-4f1e-ae60-8b8faa5f76c0",
+    "seq": 3,
+    "timestampMs": 1792983222872,
+    "requestId": "f1ddb385-e9b8-48ee-ba1d-0e8ccb919200",
+    "payload": {
+      "type": "phaseChanged",
+      "turnId": "11dd5332-1632-4871-a117-ca45401a6b97",
+      "phase": "runningModel"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "982cc782-c993-4f1e-ae60-8b8faa5f76c0",
+    "seq": 4,
+    "timestampMs": 1792983222875,
+    "requestId": "f1ddb385-e9b8-48ee-ba1d-0e8ccb919200",
+    "payload": {
+      "type": "modelRequestStarted",
+      "turnId": "11dd5332-1632-4871-a117-ca45401a6b97",
+      "attemptId": "1aa464a0-af5c-4cb3-83aa-895f66313b2f",
+      "model": {
+        "providerId": "deepseek",
+        "modelId": "deepseek-v4-pro",
+        "revision": null
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "982cc782-c993-4f1e-ae60-8b8faa5f76c0",
+    "seq": 5,
+    "timestampMs": 1792983222879,
+    "requestId": "f1ddb385-e9b8-48ee-ba1d-0e8ccb919200",
+    "payload": {
+      "type": "modelResponseStarted",
+      "turnId": "11dd5332-1632-4871-a117-ca45401a6b97",
+      "attemptId": "1aa464a0-af5c-4cb3-83aa-895f66313b2f",
+      "responseId": "compact-fixture",
+      "model": {
+        "providerId": "deepseek",
+        "modelId": "deepseek-v4-pro",
+        "revision": null
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "982cc782-c993-4f1e-ae60-8b8faa5f76c0",
+    "seq": 6,
+    "timestampMs": 1792983222881,
+    "requestId": "f1ddb385-e9b8-48ee-ba1d-0e8ccb919200",
+    "payload": {
+      "type": "modelRequestFinished",
+      "turnId": "11dd5332-1632-4871-a117-ca45401a6b97",
+      "attemptId": "1aa464a0-af5c-4cb3-83aa-895f66313b2f",
+      "inputTokens": null,
+      "outputTokens": null
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "982cc782-c993-4f1e-ae60-8b8faa5f76c0",
+    "seq": 7,
+    "timestampMs": 1792983222884,
+    "requestId": "f1ddb385-e9b8-48ee-ba1d-0e8ccb919200",
+    "payload": {
+      "type": "itemCompleted",
+      "turnId": "11dd5332-1632-4871-a117-ca45401a6b97",
+      "itemId": "01a17620-ca54-7fd1-811e-044bfc2226ca"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "982cc782-c993-4f1e-ae60-8b8faa5f76c0",
+    "seq": 8,
+    "timestampMs": 1792983222887,
+    "requestId": "f1ddb385-e9b8-48ee-ba1d-0e8ccb919200",
+    "payload": {
+      "type": "turnFinished",
+      "turnId": "11dd5332-1632-4871-a117-ca45401a6b97",
+      "outcome": "failed"
+    }
+  }
+]

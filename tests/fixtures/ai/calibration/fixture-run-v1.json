@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "run": {
+    "id": "fixture-calibration-run-v1",
+    "providerId": "fixture-generation",
+    "modelId": "fixture-v1",
+    "pipelineVersion": "quote-first-v1",
+    "promptVersion": "selection-explanation-v1",
+    "createdAt": "2026-08-04T00:00:00.000Z"
+  },
+  "cases": [
+    {
+      "caseId": "selection-zh",
+      "observedAnswerability": "answerable",
+      "durationMs": 125,
+      "usage": {
+        "inputTokens": 12,
+        "outputTokens": 8,
+        "cacheHitTokens": 0,
+        "cacheMissTokens": 12,
+        "estimatedCostMicrousd": 0,
+        "costBasis": "fixture provider has no external charge"
+      },
+      "statements": [
+        {
+          "id": "statement-1",
+          "text": "稀疏门控让每个输入只激活部分专家，因此单次推理的活动参数量减少。",
+          "isSourceStatement": true,
+          "evidence": [
+            {
+              "id": "ev-selection-zh-1",
+              "quote": "稀疏门控让每个输入只激活两个专家。总参数量保持不变，但每次推理的活动参数减少。",
+              "verifierSupport": "supports"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

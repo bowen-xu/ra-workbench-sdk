@@ -1,0 +1,1530 @@
+{
+  "reference": "bowen-xu-hbs-sync-model + user-confirmed red-baseline and ordinary baseline CAS/ACK corrections, 2026-10-23",
+  "initial": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+  "cases": [
+    {
+      "name": "ordinary save",
+      "steps": [
+        [
+          "edit",
+          "120",
+          "150",
+          true
+        ],
+        [
+          "save"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "candidate save is not Keep",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "85%",
+          "91%",
+          false
+        ],
+        [
+          "save"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "ordinary and new input",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "85%",
+          "91%",
+          false
+        ],
+        [
+          "edit",
+          "method old",
+          "method typed",
+          true
+        ],
+        [
+          "save"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod typed\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod typed\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod typed\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod typed\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod typed\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod typed\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "stale compatible save",
+      "steps": [
+        [
+          "edit",
+          "120",
+          "150",
+          true
+        ],
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "save"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 150\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 150\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "identical input converges",
+      "steps": [
+        [
+          "edit",
+          "120",
+          "150",
+          true
+        ],
+        [
+          "external",
+          "120",
+          "150"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "save"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "partial sync with conflict",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "85%",
+          "91%",
+          false
+        ],
+        [
+          "external",
+          "85%",
+          "90%"
+        ],
+        [
+          "external",
+          "next old",
+          "next new"
+        ],
+        [
+          "save"
+        ],
+        [
+          "external",
+          "next new",
+          "next newest"
+        ],
+        [
+          "sync"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext newest",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext newest",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext newest",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        }
+      ]
+    },
+    {
+      "name": "local input converges with incoming",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "85%",
+          "91%",
+          false
+        ],
+        [
+          "external",
+          "85%",
+          "90%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "91%",
+          "90%",
+          false
+        ],
+        [
+          "save"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        },
+        {
+          "h": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "Keep only score",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "external",
+          "next old",
+          "next new"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "keep",
+          "80%",
+          "85%"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "Undo only score",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "external",
+          "next old",
+          "next new"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "undo",
+          "85%",
+          "80%"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "two sequential Keep",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "external",
+          "next old",
+          "next new"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "keep",
+          "80%",
+          "85%"
+        ],
+        [
+          "keep",
+          "next old",
+          "next new"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext new",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "stale Keep keeps only viewed candidate",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "external",
+          "85%",
+          "90%"
+        ],
+        [
+          "keep",
+          "80%",
+          "85%"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "stale Undo must conflict",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "external",
+          "85%",
+          "90%"
+        ],
+        [
+          "undo",
+          "85%",
+          "80%"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        }
+      ]
+    },
+    {
+      "name": "ordinary collision retains input",
+      "steps": [
+        [
+          "edit",
+          "method old",
+          "method mine",
+          true
+        ],
+        [
+          "external",
+          "method old",
+          "method theirs"
+        ],
+        [
+          "save"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod mine\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod mine\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod mine\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod mine\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\nmethod theirs\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod theirs\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod mine\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\nmethod theirs\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod mine\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "restart candidate keeps diff",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "85%",
+          "91%",
+          false
+        ],
+        [
+          "save"
+        ],
+        [
+          "restart"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "restart conflict preserves input",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "85%",
+          "91%",
+          false
+        ],
+        [
+          "external",
+          "85%",
+          "90%"
+        ],
+        [
+          "external",
+          "next old",
+          "next new"
+        ],
+        [
+          "save"
+        ],
+        [
+          "restart"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        }
+      ]
+    },
+    {
+      "name": "empty candidate deletion",
+      "steps": [
+        [
+          "external",
+          "score 80%\n",
+          ""
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "method old",
+          "method typed",
+          true
+        ],
+        [
+          "save"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\n\nmethod typed\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod typed\n\nnext old",
+          "s": "title\n\nsample 120\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\n\nmethod typed\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod typed\n\nnext old",
+          "s": "title\n\nsample 120\n\nmethod typed\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod typed\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "multiple numeric conflicts",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "external",
+          "120",
+          "125"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "85%",
+          "91%",
+          false
+        ],
+        [
+          "edit",
+          "125",
+          "131",
+          false
+        ],
+        [
+          "external",
+          "85%",
+          "90%"
+        ],
+        [
+          "external",
+          "125",
+          "130"
+        ],
+        [
+          "sync"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 125\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 125\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 125\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 125\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 125\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 131\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 125\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 131\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 125\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 131\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 130\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 131\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 130\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        }
+      ]
+    },
+    {
+      "name": "unicode and multiline insertion",
+      "steps": [
+        [
+          "external",
+          "method old",
+          "方法 🧪\n公式 x²"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "120",
+          "150",
+          true
+        ],
+        [
+          "save"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\n方法 🧪\n公式 x²\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\n方法 🧪\n公式 x²\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\n方法 🧪\n公式 x²\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 150\nscore 80%\n\n方法 🧪\n公式 x²\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\n方法 🧪\n公式 x²\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 150\nscore 80%\n\n方法 🧪\n公式 x²\n\nnext old",
+          "b": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 150\nscore 80%\n\n方法 🧪\n公式 x²\n\nnext old",
+          "confirmed": "title\n\nsample 150\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "saved human candidate survives later external write",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "85%",
+          "91%",
+          false
+        ],
+        [
+          "save"
+        ],
+        [
+          "external",
+          "91%",
+          "90%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "save"
+        ],
+        [
+          "restart"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 90%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        }
+      ]
+    },
+    {
+      "name": "saved human candidate accepts independent updates",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "85%",
+          "91%",
+          false
+        ],
+        [
+          "save"
+        ],
+        [
+          "external",
+          "next old",
+          "next new"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "91%",
+          "92%",
+          false
+        ],
+        [
+          "save"
+        ],
+        [
+          "external",
+          "92%",
+          "95%"
+        ],
+        [
+          "sync"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 92%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 92%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 92%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 92%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 95%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 92%\n\nmethod old\n\nnext new",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 95%\n\nmethod old\n\nnext new",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        }
+      ]
+    },
+    {
+      "name": "converged human candidate still retains provenance",
+      "steps": [
+        [
+          "external",
+          "80%",
+          "85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "edit",
+          "85%",
+          "91%",
+          false
+        ],
+        [
+          "external",
+          "85%",
+          "91%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "save"
+        ],
+        [
+          "external",
+          "91%",
+          "95%"
+        ],
+        [
+          "sync"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 95%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore 91%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 95%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": true
+        }
+      ]
+    },
+    {
+      "name": "ordinary baseline aligned before entire line replacement",
+      "steps": [
+        [
+          "edit",
+          "sample 120",
+          "sample 143",
+          true
+        ],
+        [
+          "external",
+          "sample 120",
+          "external v150"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "undo",
+          "external v150",
+          "sample 143"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 143\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 143\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 143\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 143\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nexternal v150\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nexternal v150\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 143\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nexternal v150\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 143\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 143\nscore 80%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 143\nscore 80%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 143\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 143\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "name": "mixed ordinary prefix and numeric input before incoming",
+      "steps": [
+        [
+          "edit",
+          "score 80%",
+          "score3 10%",
+          true
+        ],
+        [
+          "external",
+          "score 80%",
+          "score 85%"
+        ],
+        [
+          "sync"
+        ],
+        [
+          "undo",
+          "score3 85%",
+          "score3 10%"
+        ]
+      ],
+      "states": [
+        {
+          "h": "title\n\nsample 120\nscore3 10%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore3 10%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore3 10%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore3 10%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore 80%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore3 85%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore3 10%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore3 85%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore3 10%\n\nmethod old\n\nnext old",
+          "conflict": false
+        },
+        {
+          "h": "title\n\nsample 120\nscore3 10%\n\nmethod old\n\nnext old",
+          "b": "title\n\nsample 120\nscore3 10%\n\nmethod old\n\nnext old",
+          "s": "title\n\nsample 120\nscore3 10%\n\nmethod old\n\nnext old",
+          "confirmed": "title\n\nsample 120\nscore3 10%\n\nmethod old\n\nnext old",
+          "conflict": false
+        }
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "SyncModelClient.ts": "355067218f88c070d6bb1fb229b6fc3a4904828fde960dc97aa69e40bb821c03",
+    "SyncModelWorkspace.tsx": "1670dffd971745eaaca1968f90bdd5df95eea241c90e745b4fe00f1c4b578f4c",
+    "incoming.ts": "a49e14398140a040b04629ca7282d3132918268f5fc2df96fccf60c6a7aca6cf",
+    "model.ts": "e715ca95f32f077653970a818cf9ce3b5d00dd266ce314fdafc928ad9864edc6",
+    "preservation.ts": "980e90ddaf895f917db5416fc8aa4a72d61490488f710418594b06c168e55d4f",
+    "merge.ts": "cae02caf3fde56634b80b2cd16bfe65fdce84b6fa6856a4cac56fd62a2790768",
+    "textDiff.ts": "80e22859aace83c2752f8e4cbcd56201ef565b6d0fbfe3066d7ca28134d88b33"
+  }
+}

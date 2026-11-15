@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-assistant.local/schemas/paper-overview-unit-v1.schema.json",
+  "title": "PaperOverviewUnitCandidateV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kind", "schemaVersion", "profileId", "fields"],
+  "properties": {
+    "kind": { "const": "paper_overview_unit_v1" },
+    "schemaVersion": { "const": 1 },
+    "profileId": { "const": "generic_overview_v1" },
+    "fields": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "status", "statements"],
+        "properties": {
+          "field": {
+            "enum": [
+              "research_question",
+              "approach",
+              "key_result",
+              "conclusion",
+              "limitation",
+              "open_question"
+            ]
+          },
+          "status": { "enum": ["filled", "not_found", "partial"] },
+          "statements": {
+            "type": "array",
+            "maxItems": 24,
+            "items": {
+              "$ref": "selection-explanation-v1.schema.json#/$defs/statement"
+            }
+          }
+        }
+      }
+    }
+  }
+}

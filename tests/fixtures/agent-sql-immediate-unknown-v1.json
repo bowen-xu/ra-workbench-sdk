@@ -1,0 +1,15 @@
+{
+  "code": "storage",
+  "reason": {
+    "code": "DATA_SQL_COMMIT_UNKNOWN",
+    "reason": {
+      "operationId": "00000000-0000-0000-0000-000000000001",
+      "epoch": "00000000-0000-0000-0000-000000000009",
+      "sqlFence": "9007199254740993",
+      "phase": "commit",
+      "sqliteCode": "SystemIoFailure",
+      "sqliteExtendedCode": 778,
+      "safeCause": "sql_commit_result_unknown"
+    }
+  }
+}

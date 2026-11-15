@@ -24,7 +24,8 @@
     "./pdf-view": "./src/pdf-view/index.ts",
     "./agent": "./src/agent/index.ts",
     "./nal": "./src/nal/index.ts",
-    "./structured-resources": "./src/structuredResources.ts"
+    "./structured-resources": "./src/structuredResources.ts",
+    "./ai/provider-defaults": "./src/ai/llm-provider-defaults.json"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"

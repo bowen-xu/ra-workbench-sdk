@@ -1,0 +1,22 @@
+{
+  "allowedEvidenceItemIds": ["ev-zh-1", "ev-zh-2"],
+  "payload": {
+    "kind": "selection_explanation_v1",
+    "schemaVersion": 1,
+    "statements": [
+      {
+        "id": "s1",
+        "text": "文中的“稀疏门控”是指每个输入只激活一部分专家模块。",
+        "epistemicRole": "source_paraphrase",
+        "evidenceItemIds": ["ev-zh-1"]
+      },
+      {
+        "id": "s2",
+        "text": "作者把这种选择性激活与计算成本下降联系起来，但没有声称参数总量减少。",
+        "epistemicRole": "synthesis",
+        "evidenceItemIds": ["ev-zh-1", "ev-zh-2"]
+      }
+    ],
+    "uncertainties": ["该选区没有说明路由器在分布外输入上的稳定性。"]
+  }
+}

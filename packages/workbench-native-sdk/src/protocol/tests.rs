@@ -1,5 +1,5 @@
 use super::*;
-use research_agent_core::mcp::FrameDecoder;
+use research_agent_api::mcp::FrameDecoder;
 use serde_json::json;
 
 fn request(body: RequestBody) -> Request {

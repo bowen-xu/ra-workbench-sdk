@@ -1,6 +1,6 @@
 //! Original frozen task text and Core-observed source classifications.
 use crate::candidate_contracts::AiOverviewProfileContext;
-use research_agent_core::{
+use research_agent_api::{
     submission::ContextText,
     user_input::{MentionTarget, UserInput},
 };

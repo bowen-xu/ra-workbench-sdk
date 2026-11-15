@@ -1,0 +1,413 @@
+[
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 1,
+    "timestampMs": 1792981345360,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "turnStarted",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "contextSnapshotId": "082d49a6-477c-4ab6-b285-980fc019b6df",
+      "model": {
+        "providerId": "openai",
+        "modelId": "gpt-5.6-terra",
+        "revision": "synthetic-wire-v1"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 2,
+    "timestampMs": 1792981345360,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "itemStarted",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "itemId": "49bbe679-c8df-479c-8567-6b0812a1933c",
+      "kind": {
+        "type": "userMessage"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 3,
+    "timestampMs": 1792981345360,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "textDelta",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "itemId": "49bbe679-c8df-479c-8567-6b0812a1933c",
+      "text": "Keep source decisions"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 4,
+    "timestampMs": 1792981345360,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "itemCompleted",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "itemId": "49bbe679-c8df-479c-8567-6b0812a1933c"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 5,
+    "timestampMs": 1792981345374,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "phaseChanged",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "phase": "runningModel"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 6,
+    "timestampMs": 1792981345375,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "modelRequestStarted",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "attemptId": "f91c5a5d-7745-49bc-8f10-cdab664da623",
+      "model": {
+        "providerId": "openai",
+        "modelId": "gpt-5.6-terra",
+        "revision": "synthetic-wire-v1"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 7,
+    "timestampMs": 1792981345433,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "modelResponseStarted",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "attemptId": "f91c5a5d-7745-49bc-8f10-cdab664da623",
+      "responseId": "response-f148cda3-6199-4831-8fc7-75598180eea7",
+      "model": null
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 8,
+    "timestampMs": 1792981345502,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "itemStarted",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "itemId": "2e323b80-bf36-49d1-8de0-f6b28697d647",
+      "kind": {
+        "type": "assistantMessage"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 9,
+    "timestampMs": 1792981345503,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "itemPhaseChanged",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "itemId": "2e323b80-bf36-49d1-8de0-f6b28697d647",
+      "phase": "finalAnswer",
+      "native": true
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 10,
+    "timestampMs": 1792981345556,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "textDelta",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "itemId": "2e323b80-bf36-49d1-8de0-f6b28697d647",
+      "text": "这是由真实 Rust Agent 运行器处理的隔离预览回复。"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 11,
+    "timestampMs": 1792981345673,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "itemAccepted",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "itemId": "2e323b80-bf36-49d1-8de0-f6b28697d647",
+      "kind": {
+        "type": "assistantMessage"
+      },
+      "text": "这是由真实 Rust Agent 运行器处理的隔离预览回复。",
+      "phase": "finalAnswer",
+      "source": {
+        "attemptId": "f91c5a5d-7745-49bc-8f10-cdab664da623",
+        "ordinal": 0,
+        "providerItemId": "f148cda3-6199-4831-8fc7-75598180eea7",
+        "providerDataJson": "{\"schema_version\":1,\"api\":\"responses\",\"model\":{\"providerId\":\"openai\",\"modelId\":\"gpt-5.6-terra\",\"revision\":\"synthetic-wire-v1\"},\"account_scope\":\"00000000-0000-0000-0000-0000000a11ce\",\"response_id\":\"response-f148cda3-6199-4831-8fc7-75598180eea7\",\"item_id\":\"f148cda3-6199-4831-8fc7-75598180eea7\",\"item_type\":\"message\",\"data\":{\"item\":{\"content\":[{\"type\":\"output_text\"}],\"id\":\"f148cda3-6199-4831-8fc7-75598180eea7\",\"phase\":\"final_answer\",\"role\":\"assistant\",\"type\":\"message\"},\"text_bindings\":[{\"content_index\":0,\"field\":\"text\",\"len_byte\":66,\"start_byte\":0}]}}"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 12,
+    "timestampMs": 1792981345697,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "modelRequestFinished",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "attemptId": "f91c5a5d-7745-49bc-8f10-cdab664da623",
+      "inputTokens": null,
+      "outputTokens": null
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 13,
+    "timestampMs": 1792981345698,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "usage",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "inputTokens": null,
+      "outputTokens": null
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 14,
+    "timestampMs": 1792981345716,
+    "requestId": "72fb3160-6113-4f93-ad93-b6682717bb17",
+    "payload": {
+      "type": "turnFinished",
+      "turnId": "f2e96dad-6175-49c4-bfb8-36a9600705ca",
+      "outcome": "completed"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 15,
+    "timestampMs": 1792981345917,
+    "requestId": "13f75dfa-7f81-4e7e-96bd-91c24bf1dba3",
+    "payload": {
+      "type": "turnStarted",
+      "turnId": "c8b8e3c2-9315-4f8c-a665-f038f27c6795",
+      "contextSnapshotId": "6714d7b3-209d-4f96-8a26-b0fd5870e31a",
+      "model": {
+        "providerId": "openai",
+        "modelId": "gpt-5.6-terra",
+        "revision": "synthetic-wire-v1"
+      },
+      "taskKind": "compact"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 16,
+    "timestampMs": 1792981345924,
+    "requestId": "13f75dfa-7f81-4e7e-96bd-91c24bf1dba3",
+    "payload": {
+      "type": "itemStarted",
+      "turnId": "c8b8e3c2-9315-4f8c-a665-f038f27c6795",
+      "itemId": "01a17604-2684-7490-b28b-14436330c5ed",
+      "kind": {
+        "type": "contextCompaction"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 17,
+    "timestampMs": 1792981345925,
+    "requestId": "13f75dfa-7f81-4e7e-96bd-91c24bf1dba3",
+    "payload": {
+      "type": "phaseChanged",
+      "turnId": "c8b8e3c2-9315-4f8c-a665-f038f27c6795",
+      "phase": "runningModel"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 18,
+    "timestampMs": 1792981345929,
+    "requestId": "13f75dfa-7f81-4e7e-96bd-91c24bf1dba3",
+    "payload": {
+      "type": "modelRequestStarted",
+      "turnId": "c8b8e3c2-9315-4f8c-a665-f038f27c6795",
+      "attemptId": "100f9127-0822-4a6f-a4b6-f0f72af6d119",
+      "model": {
+        "providerId": "openai",
+        "modelId": "gpt-5.6-terra",
+        "revision": "synthetic-wire-v1"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 19,
+    "timestampMs": 1792981345945,
+    "requestId": "13f75dfa-7f81-4e7e-96bd-91c24bf1dba3",
+    "payload": {
+      "type": "modelResponseStarted",
+      "turnId": "c8b8e3c2-9315-4f8c-a665-f038f27c6795",
+      "attemptId": "100f9127-0822-4a6f-a4b6-f0f72af6d119",
+      "responseId": "compact-response",
+      "model": {
+        "providerId": "openai",
+        "modelId": "gpt-5.6-terra",
+        "revision": "synthetic-wire-v1"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 20,
+    "timestampMs": 1792981345946,
+    "requestId": "13f75dfa-7f81-4e7e-96bd-91c24bf1dba3",
+    "payload": {
+      "type": "modelRequestFinished",
+      "turnId": "c8b8e3c2-9315-4f8c-a665-f038f27c6795",
+      "attemptId": "100f9127-0822-4a6f-a4b6-f0f72af6d119",
+      "inputTokens": 80,
+      "outputTokens": 4
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 21,
+    "timestampMs": 1792981345955,
+    "requestId": "13f75dfa-7f81-4e7e-96bd-91c24bf1dba3",
+    "payload": {
+      "type": "itemCompleted",
+      "turnId": "c8b8e3c2-9315-4f8c-a665-f038f27c6795",
+      "itemId": "01a17604-2684-7490-b28b-14436330c5ed"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 22,
+    "timestampMs": 1792981345956,
+    "requestId": "13f75dfa-7f81-4e7e-96bd-91c24bf1dba3",
+    "payload": {
+      "type": "turnFinished",
+      "turnId": "c8b8e3c2-9315-4f8c-a665-f038f27c6795",
+      "outcome": "completed"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 23,
+    "timestampMs": 1792981346150,
+    "requestId": "0c2c59cc-48fa-4181-a7ce-3feadacb4b64",
+    "payload": {
+      "type": "turnStarted",
+      "turnId": "d780e74f-a0df-4e5b-8440-9e4d2ab183aa",
+      "contextSnapshotId": "f603f06f-a863-4efe-b396-2b3c1c9cc805",
+      "model": {
+        "providerId": "openai",
+        "modelId": "gpt-5.6-terra",
+        "revision": "synthetic-wire-v1"
+      },
+      "taskKind": "compact"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 24,
+    "timestampMs": 1792981346159,
+    "requestId": "0c2c59cc-48fa-4181-a7ce-3feadacb4b64",
+    "payload": {
+      "type": "itemStarted",
+      "turnId": "d780e74f-a0df-4e5b-8440-9e4d2ab183aa",
+      "itemId": "01a17604-276f-7590-bc60-359676a7525e",
+      "kind": {
+        "type": "contextCompaction"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 25,
+    "timestampMs": 1792981346160,
+    "requestId": "0c2c59cc-48fa-4181-a7ce-3feadacb4b64",
+    "payload": {
+      "type": "phaseChanged",
+      "turnId": "d780e74f-a0df-4e5b-8440-9e4d2ab183aa",
+      "phase": "runningModel"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 26,
+    "timestampMs": 1792981346164,
+    "requestId": "0c2c59cc-48fa-4181-a7ce-3feadacb4b64",
+    "payload": {
+      "type": "modelRequestStarted",
+      "turnId": "d780e74f-a0df-4e5b-8440-9e4d2ab183aa",
+      "attemptId": "1398fe95-7b96-420f-8de7-c491e2376ba7",
+      "model": {
+        "providerId": "openai",
+        "modelId": "gpt-5.6-terra",
+        "revision": "synthetic-wire-v1"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 27,
+    "timestampMs": 1792981346174,
+    "requestId": "0c2c59cc-48fa-4181-a7ce-3feadacb4b64",
+    "payload": {
+      "type": "modelRequestFailed",
+      "turnId": "d780e74f-a0df-4e5b-8440-9e4d2ab183aa",
+      "attemptId": "1398fe95-7b96-420f-8de7-c491e2376ba7",
+      "error": "invalid model response stream",
+      "retryable": false,
+      "category": "provider"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "8a5f49c8-795e-4736-bb6d-880536661d83",
+    "seq": 28,
+    "timestampMs": 1792981346175,
+    "requestId": "0c2c59cc-48fa-4181-a7ce-3feadacb4b64",
+    "payload": {
+      "type": "turnFinished",
+      "turnId": "d780e74f-a0df-4e5b-8440-9e4d2ab183aa",
+      "outcome": "failed"
+    }
+  }
+]

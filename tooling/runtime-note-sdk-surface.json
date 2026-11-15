@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "task": "A00",
+  "baseline": "fb1814b0dc39683c9cb312000d1963258e8daa5d",
+  "productionFiles": 29,
+  "description": "Frozen actual note_manager consumers; static plugin definition types remain transitional, not a runtime SDK promise.",
+  "runtimeExtensions": [
+    {
+      "task": "A04",
+      "module": "core/public/noteDocuments",
+      "runtime": ["CoreNoteWorkspaceHost", "useCoreNoteWorkspaceHost"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx"],
+      "reason": "The real management view and Core fallback share one stable Core document host, retained editor and navigation props. The original A00 module inventory remains unchanged."
+    },
+    {
+      "task": "A05",
+      "module": "core/public/platform",
+      "runtime": ["confirm"],
+      "consumers": ["plugins/note_manager/src/features/notes/transfer/noteLibraryImport.ts"],
+      "reason": "Markdown import awaits the Core confirmation before create/save. New packages require core.platform.confirmation v1 before module import; the original 74 values and two workspace-host additions remain unchanged."
+    }
+  ],
+  "modules": [
+    {
+      "module": "@research-assistant/core/notes",
+      "runtime": ["DEFAULT_NOTE_INDEX_SORT","NOTE_EXPORT_SCHEMA_VERSION","hasNoteDraftContent","moveNavigationLink","navigationPageLinks","noteBlockId","noteDateGroup","notePageId","readingNoteDisplayTitle"],
+      "types": ["NavigationLinkDestination","NavigationLinkSource","NavigationPageLink","NoteBlockId","NoteCategory","NoteExportManifestV1","NoteIndexItem","NoteIndexQuery","NoteIndexSort","NoteIndexSortField","NoteIndexView","NoteLink","NotePage","NotePageId","ReadingNoteBlock"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx","apps/web/src/plugins/note_manager/features/notes/transfer/noteLibraryExport.ts","apps/web/src/plugins/note_manager/features/notes/transfer/noteLibraryImport.ts","apps/web/src/plugins/note_manager/features/notes/workspace/NoteFavorites.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NoteIndexRow.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NoteLibraryBulkBar.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NoteLibraryList.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NoteLibraryRow.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NotesExplorer.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/RetainedNoteCatalog.ts","apps/web/src/plugins/note_manager/features/notes/workspace/noteBulkActions.ts","apps/web/src/plugins/note_manager/features/notes/workspace/noteCatalogQueries.ts","apps/web/src/plugins/note_manager/features/notes/workspace/noteFavoriteActions.ts","apps/web/src/plugins/note_manager/features/notes/workspace/noteNavigationActions.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useFavoritePageTree.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useNoteLibrarySelection.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useNoteLibraryWindow.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useRetainedNoteCatalog.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useUnifiedNoteIndex.ts","apps/web/src/plugins/note_manager/public/configuration.ts"]
+    },
+    {
+      "module": "@research-assistant/core/project",
+      "runtime": [],
+      "types": ["ResearchProject"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx"]
+    },
+    {
+      "module": "@research-assistant/data/notes",
+      "runtime": ["NotesGatewayError","UnifiedNoteCatalog"],
+      "types": ["NoteDocumentSnapshot","NoteExportReport","NoteRevisionSummary","NotesErrorCode","NotesGateway","UnifiedNoteCatalogPage","WritingNoteCatalogGateway","WritingNoteCatalogPreparationOptions"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx","apps/web/src/plugins/note_manager/features/notes/transfer/noteLibraryExport.ts","apps/web/src/plugins/note_manager/features/notes/transfer/noteLibraryImport.ts","apps/web/src/plugins/note_manager/features/notes/workspace/RetainedNoteCatalog.ts","apps/web/src/plugins/note_manager/features/notes/workspace/noteCatalogQueries.ts","apps/web/src/plugins/note_manager/features/notes/workspace/noteFavoriteActions.ts","apps/web/src/plugins/note_manager/features/notes/workspace/noteNavigationActions.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useFavoritePageTree.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useRetainedNoteCatalog.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useUnifiedNoteIndex.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useWritingCatalogPreparation.ts"]
+    },
+    {
+      "module": "core/contracts/plugins",
+      "runtime": [],
+      "types": ["BuiltinPluginDefinition","BuiltinPluginManifest"],
+      "consumers": ["apps/web/src/plugins/note_manager/public/manifest.ts","apps/web/src/plugins/note_manager/public/plugin.ts"]
+    },
+    {
+      "module": "core/contracts/workbench",
+      "runtime": [],
+      "types": ["WorkspaceClosePort"],
+      "consumers": ["apps/web/src/plugins/note_manager/public/contracts.ts"]
+    },
+    {
+      "module": "core/public/agentContext/AgentContextProvider",
+      "runtime": ["useAgentContextCandidate"],
+      "types": [],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx"]
+    },
+    {
+      "module": "core/public/agentContext/sourceNavigation",
+      "runtime": ["navigateSource"],
+      "types": [],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx"]
+    },
+    {
+      "module": "core/public/agentContext/useSourceNavigationHost",
+      "runtime": [],
+      "types": ["NoteSourceNavigation"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx"]
+    },
+    {
+      "module": "core/public/configuration",
+      "runtime": ["usePluginSetting"],
+      "types": ["ConfigurationSetting","PluginConfigurationDeclaration"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx","apps/web/src/plugins/note_manager/public/configuration.ts"]
+    },
+    {
+      "module": "core/public/domainCapabilities",
+      "runtime": ["getOptionalWritingNoteCatalog"],
+      "types": [],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/workspace/useUnifiedNoteIndex.ts"]
+    },
+    {
+      "module": "core/public/feedback",
+      "runtime": ["notify"],
+      "types": [],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx","apps/web/src/plugins/note_manager/features/notes/transfer/NoteExportDialog.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NoteFavorites.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/noteFavoriteActions.ts"]
+    },
+    {
+      "module": "core/public/layout",
+      "runtime": ["createMarqueeHitTest","listWindowBoundary","listWindowOffsets","listWindowRange","retainRowSelectionIds","startMarqueeSelection","updateRowSelection","useVisibleLayoutMeasurement","visibleLayoutRect"],
+      "types": ["MarqueePoint"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/workspace/useNoteLibraryHeader.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useNoteLibrarySelection.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useNoteLibraryWindow.ts"]
+    },
+    {
+      "module": "core/public/noteDiagnostics",
+      "runtime": ["catalogErrorMessage"],
+      "types": [],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/workspace/useRetainedNoteCatalog.ts"]
+    },
+    {
+      "module": "core/public/noteDocuments",
+      "runtime": ["CoreNoteWorkspace","NoteDocumentPending","NoteDocumentView","PageLinkBlock","RetainedNoteEditors","clearNoteRecoveryDraft","getNoteReviewSaveState","holdTextEditor","isTextEditorHeld","noteContextCandidate","prepareNavigationSessions","reportNoteCreationError","requestReadingNotePanelTransfer","synchronizeNoteReview","useNoteAcceptance","useNoteCatalogTargets","useNoteDocumentMetadata","useNoteDocumentSession","useNoteHistoryScope","useNoteLifecycleNotice","useNoteWorkspaceTabs","useNotesShortcuts","useResearchObjectTargets"],
+      "types": ["NotePageSource"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NoteIndexRow.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/noteNavigationActions.ts"]
+    },
+    {
+      "module": "core/public/noteResources",
+      "runtime": ["commitNoteMetadata","useNoteResourceVersion","useNoteResources"],
+      "types": ["NoteResourceAccess"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx","apps/web/src/plugins/note_manager/features/notes/transfer/noteLibraryImport.ts","apps/web/src/plugins/note_manager/features/notes/workspace/noteFavoriteActions.ts","apps/web/src/plugins/note_manager/features/notes/workspace/noteNavigationActions.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useFavoritePageTree.ts","apps/web/src/plugins/note_manager/features/notes/workspace/useUnifiedNoteIndex.ts"]
+    },
+    {
+      "module": "core/public/noteStorage",
+      "runtime": ["loadBrowserNoteCatalogRuntime"],
+      "types": ["NoteLibraryTransferStorage"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/transfer/noteLibraryExport.ts","apps/web/src/plugins/note_manager/features/notes/workspace/noteCatalogQueries.ts"]
+    },
+    {
+      "module": "core/public/noteTransfer",
+      "runtime": ["MAX_MARKDOWN_IMPORT_BYTES","chooseNoteExportDirectory","collectNoteAssets","noteAssetExportPaths","noteDocumentToMarkdown","previewMarkdownImport","safeExportName"],
+      "types": [],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/transfer/NoteExportDialog.tsx","apps/web/src/plugins/note_manager/features/notes/transfer/noteLibraryExport.ts","apps/web/src/plugins/note_manager/features/notes/transfer/noteLibraryImport.ts"]
+    },
+    {
+      "module": "core/public/overlay",
+      "runtime": ["ActionMenu","ActionMenuItem","ControlHint"],
+      "types": [],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NoteIndexRow.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NoteLibraryBulkBar.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NoteLibraryRow.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/NotesExplorer.tsx"]
+    },
+    {
+      "module": "core/public/platform",
+      "runtime": ["chooseAppFile"],
+      "types": [],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/workspace/NotesExplorer.tsx"]
+    },
+    {
+      "module": "core/public/reorder",
+      "runtime": ["ReorderGroup","ReorderItem","usePointerReorder"],
+      "types": ["ReorderDrop"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/workspace/NoteFavorites.tsx"]
+    },
+    {
+      "module": "core/public/workbench",
+      "runtime": ["getReaderCloseCoordinator","useWorkspacePresentation"],
+      "types": ["WorkspacePresentation"],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/noteNavigationActions.ts"]
+    },
+    {
+      "module": "core/public/workspaceState",
+      "runtime": ["readWorkspaceState","useWorkspaceState","workspaceString","workspaceStringSet","writeWorkspaceState"],
+      "types": [],
+      "consumers": ["apps/web/src/plugins/note_manager/features/notes/NotesWorkspace.tsx","apps/web/src/plugins/note_manager/features/notes/workspace/useFavoritePageTree.ts"]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 //! Finite decisions at the original workflow's preparation and terminal boundaries.
 use super::{AnalysisWorkflowError, FailureStatuses, PaperAnalysisWorkflowDraft};
 use crate::analysis_history::contracts::{PaperAnalysisMessage, PaperAnalysisWorkflow};
-use research_agent_core::submission::ContextText;
+use research_agent_api::submission::ContextText;
 use serde::{Deserialize, Serialize};
 
 pub const CAPABILITY_ID: &str = "literature.analysis-workflow";

@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "scopes": [
+    {
+      "committed": {
+        "intent": {
+          "conversationId": "d4f72d92-0ec9-443c-8c40-ebe328be35ef",
+          "edit": {
+            "inputId": "811a079d-ffb9-4ad1-86c6-8012a1a5dcd6",
+            "text": "Synthetic retained input",
+            "type": "add",
+            "userInput": []
+          },
+          "expectedRevision": 0,
+          "requestId": "f0864368-a0b0-4510-ae6a-cc827717c9d9",
+          "scope": {
+            "kind": "manuscript",
+            "manuscriptId": "a9e92673-74a7-4e50-ac86-a76e7573fcfa"
+          }
+        },
+        "schemaVersion": 1,
+        "status": {
+          "proof": {
+            "conversationId": "d4f72d92-0ec9-443c-8c40-ebe328be35ef",
+            "epoch": "5a2a34f5-7815-4886-8b6e-8fbf172e40b7",
+            "family": "agent.input_queue.edit",
+            "operationId": "f0864368-a0b0-4510-ae6a-cc827717c9d9",
+            "replayed": true,
+            "result": null,
+            "schemaVersion": 1,
+            "sqlFence": "0"
+          },
+          "queue": {
+            "conversationId": "d4f72d92-0ec9-443c-8c40-ebe328be35ef",
+            "inputs": [
+              {
+                "inputId": "811a079d-ffb9-4ad1-86c6-8012a1a5dcd6",
+                "origin": {
+                  "kind": "manuscript",
+                  "resourceId": "a9e92673-74a7-4e50-ac86-a76e7573fcfa"
+                },
+                "text": "Synthetic retained input"
+              }
+            ],
+            "paused": false,
+            "preparingInputId": null,
+            "revision": 1,
+            "schemaVersion": 1
+          },
+          "type": "committed"
+        }
+      },
+      "notFound": {
+        "intent": {
+          "conversationId": "d4f72d92-0ec9-443c-8c40-ebe328be35ef",
+          "edit": {
+            "inputId": "811a079d-ffb9-4ad1-86c6-8012a1a5dcd6",
+            "text": "Synthetic retained input",
+            "type": "add",
+            "userInput": []
+          },
+          "expectedRevision": 0,
+          "requestId": "f0864368-a0b0-4510-ae6a-cc827717c9d9",
+          "scope": {
+            "kind": "manuscript",
+            "manuscriptId": "a9e92673-74a7-4e50-ac86-a76e7573fcfa"
+          }
+        },
+        "schemaVersion": 1,
+        "status": {
+          "type": "notFound"
+        }
+      },
+      "request": {
+        "conversationId": "d4f72d92-0ec9-443c-8c40-ebe328be35ef",
+        "edit": {
+          "inputId": "811a079d-ffb9-4ad1-86c6-8012a1a5dcd6",
+          "text": "Synthetic retained input",
+          "type": "add",
+          "userInput": []
+        },
+        "expectedRevision": 0,
+        "manuscriptId": "a9e92673-74a7-4e50-ac86-a76e7573fcfa",
+        "requestId": "f0864368-a0b0-4510-ae6a-cc827717c9d9"
+      },
+      "storageFailure": {
+        "code": "QUEUE_STORAGE_FAILURE",
+        "conversationId": "d4f72d92-0ec9-443c-8c40-ebe328be35ef",
+        "operationId": "f0864368-a0b0-4510-ae6a-cc827717c9d9",
+        "reason": {
+          "code": "DATA_SQL_OPERATION_CONFLICT",
+          "reason": {
+            "epoch": "5a2a34f5-7815-4886-8b6e-8fbf172e40b7",
+            "operationId": "f0864368-a0b0-4510-ae6a-cc827717c9d9",
+            "phase": "queue-edit-status",
+            "safeCause": "operation_id_content_changed",
+            "sqlFence": "0",
+            "sqliteCode": null,
+            "sqliteExtendedCode": null
+          }
+        },
+        "requestId": "f0864368-a0b0-4510-ae6a-cc827717c9d9",
+        "scope": {
+          "kind": "manuscript",
+          "manuscriptId": "a9e92673-74a7-4e50-ac86-a76e7573fcfa"
+        }
+      }
+    },
+    {
+      "committed": {
+        "intent": {
+          "conversationId": "c6911622-b37f-491e-92fe-3d229cfca200",
+          "edit": {
+            "inputId": "e5fe35f3-773d-4dfa-83ad-087c09311dc4",
+            "text": "Synthetic retained input",
+            "type": "add",
+            "userInput": []
+          },
+          "expectedRevision": 0,
+          "requestId": "e3ab0d94-a8c8-4e2e-8377-fe8bc7a5a41e",
+          "scope": {
+            "kind": "paper",
+            "paperId": "450d9ccb-27f9-4d2c-8849-7bb382e93380"
+          }
+        },
+        "schemaVersion": 1,
+        "status": {
+          "proof": {
+            "conversationId": "c6911622-b37f-491e-92fe-3d229cfca200",
+            "epoch": "5a2a34f5-7815-4886-8b6e-8fbf172e40b7",
+            "family": "agent.input_queue.edit",
+            "operationId": "e3ab0d94-a8c8-4e2e-8377-fe8bc7a5a41e",
+            "replayed": true,
+            "result": null,
+            "schemaVersion": 1,
+            "sqlFence": "0"
+          },
+          "queue": {
+            "conversationId": "c6911622-b37f-491e-92fe-3d229cfca200",
+            "inputs": [
+              {
+                "inputId": "e5fe35f3-773d-4dfa-83ad-087c09311dc4",
+                "origin": {
+                  "kind": "paper",
+                  "resourceId": "450d9ccb-27f9-4d2c-8849-7bb382e93380"
+                },
+                "text": "Synthetic retained input"
+              }
+            ],
+            "paused": false,
+            "preparingInputId": null,
+            "revision": 1,
+            "schemaVersion": 1
+          },
+          "type": "committed"
+        }
+      },
+      "notFound": {
+        "intent": {
+          "conversationId": "c6911622-b37f-491e-92fe-3d229cfca200",
+          "edit": {
+            "inputId": "e5fe35f3-773d-4dfa-83ad-087c09311dc4",
+            "text": "Synthetic retained input",
+            "type": "add",
+            "userInput": []
+          },
+          "expectedRevision": 0,
+          "requestId": "e3ab0d94-a8c8-4e2e-8377-fe8bc7a5a41e",
+          "scope": {
+            "kind": "paper",
+            "paperId": "450d9ccb-27f9-4d2c-8849-7bb382e93380"
+          }
+        },
+        "schemaVersion": 1,
+        "status": {
+          "type": "notFound"
+        }
+      },
+      "request": {
+        "conversationId": "c6911622-b37f-491e-92fe-3d229cfca200",
+        "edit": {
+          "inputId": "e5fe35f3-773d-4dfa-83ad-087c09311dc4",
+          "text": "Synthetic retained input",
+          "type": "add",
+          "userInput": []
+        },
+        "expectedRevision": 0,
+        "paperId": "450d9ccb-27f9-4d2c-8849-7bb382e93380",
+        "requestId": "e3ab0d94-a8c8-4e2e-8377-fe8bc7a5a41e"
+      },
+      "storageFailure": {
+        "code": "QUEUE_STORAGE_FAILURE",
+        "conversationId": "c6911622-b37f-491e-92fe-3d229cfca200",
+        "operationId": "e3ab0d94-a8c8-4e2e-8377-fe8bc7a5a41e",
+        "reason": {
+          "code": "DATA_SQL_OPERATION_CONFLICT",
+          "reason": {
+            "epoch": "5a2a34f5-7815-4886-8b6e-8fbf172e40b7",
+            "operationId": "e3ab0d94-a8c8-4e2e-8377-fe8bc7a5a41e",
+            "phase": "queue-edit-status",
+            "safeCause": "operation_id_content_changed",
+            "sqlFence": "0",
+            "sqliteCode": null,
+            "sqliteExtendedCode": null
+          }
+        },
+        "requestId": "e3ab0d94-a8c8-4e2e-8377-fe8bc7a5a41e",
+        "scope": {
+          "kind": "paper",
+          "paperId": "450d9ccb-27f9-4d2c-8849-7bb382e93380"
+        }
+      }
+    },
+    {
+      "committed": {
+        "intent": {
+          "conversationId": "bf29cfeb-903e-464e-9714-b32fe74dc148",
+          "edit": {
+            "inputId": "b84062f8-9ac3-4164-8711-83fa715140e1",
+            "text": "Synthetic retained input",
+            "type": "add",
+            "userInput": []
+          },
+          "expectedRevision": 0,
+          "requestId": "79df7d1f-2b67-4d9d-be86-15813e224413",
+          "scope": {
+            "kind": "note",
+            "resourceId": "ab7064c2-ae30-42bc-afd9-d67878892b6e"
+          }
+        },
+        "schemaVersion": 1,
+        "status": {
+          "proof": {
+            "conversationId": "bf29cfeb-903e-464e-9714-b32fe74dc148",
+            "epoch": "5a2a34f5-7815-4886-8b6e-8fbf172e40b7",
+            "family": "agent.input_queue.edit",
+            "operationId": "79df7d1f-2b67-4d9d-be86-15813e224413",
+            "replayed": true,
+            "result": null,
+            "schemaVersion": 1,
+            "sqlFence": "0"
+          },
+          "queue": {
+            "conversationId": "bf29cfeb-903e-464e-9714-b32fe74dc148",
+            "inputs": [
+              {
+                "inputId": "b84062f8-9ac3-4164-8711-83fa715140e1",
+                "origin": {
+                  "kind": "note",
+                  "resourceId": "ab7064c2-ae30-42bc-afd9-d67878892b6e"
+                },
+                "text": "Synthetic retained input"
+              }
+            ],
+            "paused": false,
+            "preparingInputId": null,
+            "revision": 1,
+            "schemaVersion": 1
+          },
+          "type": "committed"
+        }
+      },
+      "notFound": {
+        "intent": {
+          "conversationId": "bf29cfeb-903e-464e-9714-b32fe74dc148",
+          "edit": {
+            "inputId": "b84062f8-9ac3-4164-8711-83fa715140e1",
+            "text": "Synthetic retained input",
+            "type": "add",
+            "userInput": []
+          },
+          "expectedRevision": 0,
+          "requestId": "79df7d1f-2b67-4d9d-be86-15813e224413",
+          "scope": {
+            "kind": "note",
+            "resourceId": "ab7064c2-ae30-42bc-afd9-d67878892b6e"
+          }
+        },
+        "schemaVersion": 1,
+        "status": {
+          "type": "notFound"
+        }
+      },
+      "request": {
+        "conversationId": "bf29cfeb-903e-464e-9714-b32fe74dc148",
+        "edit": {
+          "inputId": "b84062f8-9ac3-4164-8711-83fa715140e1",
+          "text": "Synthetic retained input",
+          "type": "add",
+          "userInput": []
+        },
+        "expectedRevision": 0,
+        "requestId": "79df7d1f-2b67-4d9d-be86-15813e224413",
+        "scope": {
+          "kind": "note",
+          "resourceId": "ab7064c2-ae30-42bc-afd9-d67878892b6e"
+        }
+      },
+      "storageFailure": {
+        "code": "QUEUE_STORAGE_FAILURE",
+        "conversationId": "bf29cfeb-903e-464e-9714-b32fe74dc148",
+        "operationId": "79df7d1f-2b67-4d9d-be86-15813e224413",
+        "reason": {
+          "code": "DATA_SQL_OPERATION_CONFLICT",
+          "reason": {
+            "epoch": "5a2a34f5-7815-4886-8b6e-8fbf172e40b7",
+            "operationId": "79df7d1f-2b67-4d9d-be86-15813e224413",
+            "phase": "queue-edit-status",
+            "safeCause": "operation_id_content_changed",
+            "sqlFence": "0",
+            "sqliteCode": null,
+            "sqliteExtendedCode": null
+          }
+        },
+        "requestId": "79df7d1f-2b67-4d9d-be86-15813e224413",
+        "scope": {
+          "kind": "note",
+          "resourceId": "ab7064c2-ae30-42bc-afd9-d67878892b6e"
+        }
+      }
+    },
+    {
+      "committed": {
+        "intent": {
+          "conversationId": "5068c726-c218-4872-9ad4-38009e8f4a20",
+          "edit": {
+            "inputId": "46d92d6d-7f8f-43a9-ab21-7b24ba67d2de",
+            "text": "Synthetic retained input",
+            "type": "add",
+            "userInput": []
+          },
+          "expectedRevision": 0,
+          "requestId": "b6444937-85c0-4d21-8542-603d5de629ec",
+          "scope": {
+            "kind": "readingNote",
+            "resourceId": "98139ed3-7564-4bfc-97ac-1cbf528252e5"
+          }
+        },
+        "schemaVersion": 1,
+        "status": {
+          "proof": {
+            "conversationId": "5068c726-c218-4872-9ad4-38009e8f4a20",
+            "epoch": "5a2a34f5-7815-4886-8b6e-8fbf172e40b7",
+            "family": "agent.input_queue.edit",
+            "operationId": "b6444937-85c0-4d21-8542-603d5de629ec",
+            "replayed": true,
+            "result": null,
+            "schemaVersion": 1,
+            "sqlFence": "0"
+          },
+          "queue": {
+            "conversationId": "5068c726-c218-4872-9ad4-38009e8f4a20",
+            "inputs": [
+              {
+                "inputId": "46d92d6d-7f8f-43a9-ab21-7b24ba67d2de",
+                "origin": {
+                  "kind": "readingNote",
+                  "resourceId": "98139ed3-7564-4bfc-97ac-1cbf528252e5"
+                },
+                "text": "Synthetic retained input"
+              }
+            ],
+            "paused": false,
+            "preparingInputId": null,
+            "revision": 1,
+            "schemaVersion": 1
+          },
+          "type": "committed"
+        }
+      },
+      "notFound": {
+        "intent": {
+          "conversationId": "5068c726-c218-4872-9ad4-38009e8f4a20",
+          "edit": {
+            "inputId": "46d92d6d-7f8f-43a9-ab21-7b24ba67d2de",
+            "text": "Synthetic retained input",
+            "type": "add",
+            "userInput": []
+          },
+          "expectedRevision": 0,
+          "requestId": "b6444937-85c0-4d21-8542-603d5de629ec",
+          "scope": {
+            "kind": "readingNote",
+            "resourceId": "98139ed3-7564-4bfc-97ac-1cbf528252e5"
+          }
+        },
+        "schemaVersion": 1,
+        "status": {
+          "type": "notFound"
+        }
+      },
+      "request": {
+        "conversationId": "5068c726-c218-4872-9ad4-38009e8f4a20",
+        "edit": {
+          "inputId": "46d92d6d-7f8f-43a9-ab21-7b24ba67d2de",
+          "text": "Synthetic retained input",
+          "type": "add",
+          "userInput": []
+        },
+        "expectedRevision": 0,
+        "requestId": "b6444937-85c0-4d21-8542-603d5de629ec",
+        "scope": {
+          "kind": "readingNote",
+          "resourceId": "98139ed3-7564-4bfc-97ac-1cbf528252e5"
+        }
+      },
+      "storageFailure": {
+        "code": "QUEUE_STORAGE_FAILURE",
+        "conversationId": "5068c726-c218-4872-9ad4-38009e8f4a20",
+        "operationId": "b6444937-85c0-4d21-8542-603d5de629ec",
+        "reason": {
+          "code": "DATA_SQL_OPERATION_CONFLICT",
+          "reason": {
+            "epoch": "5a2a34f5-7815-4886-8b6e-8fbf172e40b7",
+            "operationId": "b6444937-85c0-4d21-8542-603d5de629ec",
+            "phase": "queue-edit-status",
+            "safeCause": "operation_id_content_changed",
+            "sqlFence": "0",
+            "sqliteCode": null,
+            "sqliteExtendedCode": null
+          }
+        },
+        "requestId": "b6444937-85c0-4d21-8542-603d5de629ec",
+        "scope": {
+          "kind": "readingNote",
+          "resourceId": "98139ed3-7564-4bfc-97ac-1cbf528252e5"
+        }
+      }
+    },
+    {
+      "committed": {
+        "intent": {
+          "conversationId": "5e37c3d0-77ff-4b40-9219-2483dc0d5ad1",
+          "edit": {
+            "inputId": "1ae4adb6-9458-4297-8aff-afe11e36ec5f",
+            "text": "Synthetic retained input",
+            "type": "add",
+            "userInput": []
+          },
+          "expectedRevision": 0,
+          "requestId": "6c554b84-d834-4167-9bd6-4fb6c950cea3",
+          "scope": {
+            "kind": "context"
+          }
+        },
+        "schemaVersion": 1,
+        "status": {
+          "proof": {
+            "conversationId": "5e37c3d0-77ff-4b40-9219-2483dc0d5ad1",
+            "epoch": "5a2a34f5-7815-4886-8b6e-8fbf172e40b7",
+            "family": "agent.input_queue.edit",
+            "operationId": "6c554b84-d834-4167-9bd6-4fb6c950cea3",
+            "replayed": true,
+            "result": null,
+            "schemaVersion": 1,
+            "sqlFence": "0"
+          },
+          "queue": {
+            "conversationId": "5e37c3d0-77ff-4b40-9219-2483dc0d5ad1",
+            "inputs": [
+              {
+                "inputId": "1ae4adb6-9458-4297-8aff-afe11e36ec5f",
+                "text": "Synthetic retained input"
+              }
+            ],
+            "paused": false,
+            "preparingInputId": null,
+            "revision": 1,
+            "schemaVersion": 1
+          },
+          "type": "committed"
+        }
+      },
+      "notFound": {
+        "intent": {
+          "conversationId": "5e37c3d0-77ff-4b40-9219-2483dc0d5ad1",
+          "edit": {
+            "inputId": "1ae4adb6-9458-4297-8aff-afe11e36ec5f",
+            "text": "Synthetic retained input",
+            "type": "add",
+            "userInput": []
+          },
+          "expectedRevision": 0,
+          "requestId": "6c554b84-d834-4167-9bd6-4fb6c950cea3",
+          "scope": {
+            "kind": "context"
+          }
+        },
+        "schemaVersion": 1,
+        "status": {
+          "type": "notFound"
+        }
+      },
+      "request": {
+        "conversationId": "5e37c3d0-77ff-4b40-9219-2483dc0d5ad1",
+        "edit": {
+          "inputId": "1ae4adb6-9458-4297-8aff-afe11e36ec5f",
+          "text": "Synthetic retained input",
+          "type": "add",
+          "userInput": []
+        },
+        "expectedRevision": 0,
+        "requestId": "6c554b84-d834-4167-9bd6-4fb6c950cea3"
+      },
+      "storageFailure": {
+        "code": "QUEUE_STORAGE_FAILURE",
+        "conversationId": "5e37c3d0-77ff-4b40-9219-2483dc0d5ad1",
+        "operationId": "6c554b84-d834-4167-9bd6-4fb6c950cea3",
+        "reason": {
+          "code": "DATA_SQL_OPERATION_CONFLICT",
+          "reason": {
+            "epoch": "5a2a34f5-7815-4886-8b6e-8fbf172e40b7",
+            "operationId": "6c554b84-d834-4167-9bd6-4fb6c950cea3",
+            "phase": "queue-edit-status",
+            "safeCause": "operation_id_content_changed",
+            "sqlFence": "0",
+            "sqliteCode": null,
+            "sqliteExtendedCode": null
+          }
+        },
+        "requestId": "6c554b84-d834-4167-9bd6-4fb6c950cea3",
+        "scope": {
+          "kind": "context"
+        }
+      }
+    }
+  ]
+}

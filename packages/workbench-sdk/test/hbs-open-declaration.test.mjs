@@ -8,7 +8,7 @@ import {fileURLToPath} from "node:url";
 import {test} from "node:test";
 
 const root = fileURLToPath(new URL("../../../", import.meta.url));
-const require = createRequire(path.join(root, "apps/web/package.json"));
+const require = createRequire(path.join(root, "package.json"));
 const compiler = require.resolve("typescript/bin/tsc");
 
 test("compiled public HBS declarations preserve open options and contextual request sequence typing", () => {

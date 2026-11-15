@@ -1,0 +1,285 @@
+{
+  "cases": [
+    {
+      "kind": "ordinary",
+      "notFound": {
+        "intent": {
+          "contextSnapshotId": "e1bcf235-806d-48a6-933b-814a54c075c5",
+          "conversationId": "5e82a18e-72ce-5778-95eb-1d36100df0dd",
+          "manuscriptId": "4e40e682-d72b-5d63-98f6-6b2a9d41a5f2",
+          "mode": "chatGptDefault",
+          "model": {
+            "modelId": "gpt-5.6-terra",
+            "providerId": "openai",
+            "revision": "synthetic-wire-v1"
+          },
+          "requestId": "3afe9f3d-46f8-4a88-a2e5-bdb0c8735230"
+        },
+        "schemaVersion": 1,
+        "status": {
+          "type": "notFound"
+        }
+      },
+      "prepared": {
+        "intent": {
+          "contextSnapshotId": "e1bcf235-806d-48a6-933b-814a54c075c5",
+          "conversationId": "5e82a18e-72ce-5778-95eb-1d36100df0dd",
+          "manuscriptId": "4e40e682-d72b-5d63-98f6-6b2a9d41a5f2",
+          "mode": "chatGptDefault",
+          "model": {
+            "modelId": "gpt-5.6-terra",
+            "providerId": "openai",
+            "revision": "synthetic-wire-v1"
+          },
+          "requestId": "e5161938-f3d3-433c-815a-9efff0f1d25f"
+        },
+        "schemaVersion": 1,
+        "status": {
+          "preview": {
+            "contextSnapshotId": "e1bcf235-806d-48a6-933b-814a54c075c5",
+            "conversationId": "5e82a18e-72ce-5778-95eb-1d36100df0dd",
+            "input": {
+              "context": [
+                {
+                  "anchor": "{\"bufferRevision\":null,\"diskSha256\":\"b7c8ef4498c20a1d81bee0fc59396054d1278794d8e534da4774e83eff160e57\",\"endUtf16\":null,\"manuscriptId\":\"4e40e682-d72b-5d63-98f6-6b2a9d41a5f2\",\"startUtf16\":null}",
+                  "kind": "manuscript",
+                  "resourceId": "sn-article.tex",
+                  "revision": "sha256:b7c8ef4498c20a1d81bee0fc59396054d1278794d8e534da4774e83eff160e57",
+                  "sourceId": "writing:bc501c30aaefefebf5eab779310d352a50c5635695777c0fc20bdeb0f3ee1d5c",
+                  "text": "\\documentclass{article}\n\\keywords{research, agent}\n"
+                }
+              ],
+              "model": {
+                "modelId": "gpt-5.6-terra",
+                "providerId": "openai",
+                "revision": "synthetic-wire-v1"
+              },
+              "reasoningEffort": null,
+              "skills": [
+                {
+                  "descriptor": {
+                    "allow_implicit_invocation": true,
+                    "description": "隔离 Canvas 的合成研究技能，读取来源并保留证据定位。",
+                    "identity": {
+                      "environment_id": "application",
+                      "revision": "d353a075ba6172528ae1493942b7a059439c633cc3486841787f8a71148bd9cb",
+                      "source_id": ".agents/skills/canvas-preview-ccc2b92b-79e9-4d6d-8c9b-d84916f50079/SKILL.md"
+                    },
+                    "name": "模拟写作技能"
+                  },
+                  "explicit": false
+                }
+              ],
+              "text": "Original start evidence"
+            },
+            "manuscriptId": "4e40e682-d72b-5d63-98f6-6b2a9d41a5f2",
+            "requestId": "e5161938-f3d3-433c-815a-9efff0f1d25f",
+            "schemaVersion": 1,
+            "turnId": "fd56d9ab-501c-4b3f-98b1-a6719200255a"
+          },
+          "type": "prepared"
+        }
+      },
+      "started": {
+        "intent": {
+          "contextSnapshotId": "e1bcf235-806d-48a6-933b-814a54c075c5",
+          "conversationId": "5e82a18e-72ce-5778-95eb-1d36100df0dd",
+          "manuscriptId": "4e40e682-d72b-5d63-98f6-6b2a9d41a5f2",
+          "mode": "chatGptDefault",
+          "model": {
+            "modelId": "gpt-5.6-terra",
+            "providerId": "openai",
+            "revision": "synthetic-wire-v1"
+          },
+          "requestId": "e5161938-f3d3-433c-815a-9efff0f1d25f"
+        },
+        "schemaVersion": 1,
+        "status": {
+          "result": {
+            "alreadyStarted": true,
+            "conversationId": "5e82a18e-72ce-5778-95eb-1d36100df0dd",
+            "outcome": "completed",
+            "requestId": "e5161938-f3d3-433c-815a-9efff0f1d25f",
+            "schemaVersion": 1,
+            "turnId": "fd56d9ab-501c-4b3f-98b1-a6719200255a"
+          },
+          "type": "started"
+        }
+      },
+      "unconfirmed": {
+        "intent": {
+          "contextSnapshotId": "3ee1bcc8-7deb-48cd-9e0e-e46f37c44ecd",
+          "conversationId": "5e82a18e-72ce-5778-95eb-1d36100df0dd",
+          "manuscriptId": "4e40e682-d72b-5d63-98f6-6b2a9d41a5f2",
+          "mode": "chatGptDefault",
+          "model": {
+            "modelId": "gpt-5.6-terra",
+            "providerId": "openai",
+            "revision": "synthetic-wire-v1"
+          },
+          "requestId": "e5161938-f3d3-433c-815a-9efff0f1d25f"
+        },
+        "schemaVersion": 1,
+        "status": {
+          "detail": {
+            "epoch": "0918babe-51b6-4925-a050-ab0656e1c5f5",
+            "operationId": "e5161938-f3d3-433c-815a-9efff0f1d25f",
+            "phase": "writing-start-status",
+            "safeCause": "writing_start_intent_mismatch",
+            "sqlFence": "1",
+            "sqliteCode": null,
+            "sqliteExtendedCode": null
+          },
+          "type": "unconfirmed"
+        }
+      }
+    },
+    {
+      "kind": "manual",
+      "notFound": {
+        "intent": {
+          "contextSnapshotId": "a3e24931-7f98-48d6-93ea-d21d2dc1b1d9",
+          "conversationId": "8a56bab8-8e04-5a18-bbf6-3913452e3fda",
+          "expectedRevision": 0,
+          "host": {
+            "kind": "manuscript",
+            "manuscriptId": "babe3a49-8756-562b-a4bb-70c04cfc0d5c"
+          },
+          "model": {
+            "modelId": "gpt-5.6-terra",
+            "providerId": "openai",
+            "revision": "synthetic-wire-v1"
+          },
+          "requestId": "50b2753d-c1b9-4465-b541-f39fde79a384"
+        },
+        "schemaVersion": 1,
+        "status": {
+          "type": "notFound"
+        }
+      },
+      "prepared": {
+        "intent": {
+          "contextSnapshotId": "a3e24931-7f98-48d6-93ea-d21d2dc1b1d9",
+          "conversationId": "8a56bab8-8e04-5a18-bbf6-3913452e3fda",
+          "expectedRevision": 0,
+          "host": {
+            "kind": "manuscript",
+            "manuscriptId": "babe3a49-8756-562b-a4bb-70c04cfc0d5c"
+          },
+          "model": {
+            "modelId": "gpt-5.6-terra",
+            "providerId": "openai",
+            "revision": "synthetic-wire-v1"
+          },
+          "requestId": "f5b91b1d-5953-433c-a7fd-4e354ea4ce08"
+        },
+        "schemaVersion": 1,
+        "status": {
+          "preview": {
+            "contextSnapshotId": "a3e24931-7f98-48d6-93ea-d21d2dc1b1d9",
+            "conversationId": "8a56bab8-8e04-5a18-bbf6-3913452e3fda",
+            "input": {
+              "context": [
+                {
+                  "anchor": "{\"bufferRevision\":null,\"diskSha256\":\"b7c8ef4498c20a1d81bee0fc59396054d1278794d8e534da4774e83eff160e57\",\"endUtf16\":null,\"manuscriptId\":\"babe3a49-8756-562b-a4bb-70c04cfc0d5c\",\"startUtf16\":null}",
+                  "kind": "manuscript",
+                  "resourceId": "sn-article.tex",
+                  "revision": "sha256:b7c8ef4498c20a1d81bee0fc59396054d1278794d8e534da4774e83eff160e57",
+                  "sourceId": "writing:d5e27e5ff8f7753dca920b509c1e13abc405ec4fc838e0e9ce42a9d430148fc4",
+                  "text": "\\documentclass{article}\n\\keywords{research, agent}\n"
+                }
+              ],
+              "model": {
+                "modelId": "gpt-5.6-terra",
+                "providerId": "openai",
+                "revision": "synthetic-wire-v1"
+              },
+              "reasoningEffort": null,
+              "skills": [
+                {
+                  "descriptor": {
+                    "allow_implicit_invocation": true,
+                    "description": "隔离 Canvas 的合成研究技能，读取来源并保留证据定位。",
+                    "identity": {
+                      "environment_id": "application",
+                      "revision": "d353a075ba6172528ae1493942b7a059439c633cc3486841787f8a71148bd9cb",
+                      "source_id": ".agents/skills/canvas-preview-b655ca7d-90bd-4a51-a1eb-e342b375a13d/SKILL.md"
+                    },
+                    "name": "模拟写作技能"
+                  },
+                  "explicit": false
+                }
+              ],
+              "text": "/compact"
+            },
+            "manuscriptId": "babe3a49-8756-562b-a4bb-70c04cfc0d5c",
+            "requestId": "f5b91b1d-5953-433c-a7fd-4e354ea4ce08",
+            "schemaVersion": 1,
+            "turnId": "d263d428-8ebd-4f6a-8b0e-d170256aa502"
+          },
+          "type": "prepared"
+        }
+      },
+      "started": {
+        "intent": {
+          "contextSnapshotId": "a3e24931-7f98-48d6-93ea-d21d2dc1b1d9",
+          "conversationId": "8a56bab8-8e04-5a18-bbf6-3913452e3fda",
+          "expectedRevision": 0,
+          "host": {
+            "kind": "manuscript",
+            "manuscriptId": "babe3a49-8756-562b-a4bb-70c04cfc0d5c"
+          },
+          "model": {
+            "modelId": "gpt-5.6-terra",
+            "providerId": "openai",
+            "revision": "synthetic-wire-v1"
+          },
+          "requestId": "f5b91b1d-5953-433c-a7fd-4e354ea4ce08"
+        },
+        "schemaVersion": 1,
+        "status": {
+          "result": {
+            "alreadyStarted": true,
+            "conversationId": "8a56bab8-8e04-5a18-bbf6-3913452e3fda",
+            "outcome": "completed",
+            "requestId": "f5b91b1d-5953-433c-a7fd-4e354ea4ce08",
+            "schemaVersion": 1,
+            "turnId": "d263d428-8ebd-4f6a-8b0e-d170256aa502"
+          },
+          "type": "started"
+        }
+      },
+      "unconfirmed": {
+        "intent": {
+          "contextSnapshotId": "ddb2899b-5c2e-41fc-b199-7bc46c175b9d",
+          "conversationId": "8a56bab8-8e04-5a18-bbf6-3913452e3fda",
+          "expectedRevision": 0,
+          "host": {
+            "kind": "manuscript",
+            "manuscriptId": "babe3a49-8756-562b-a4bb-70c04cfc0d5c"
+          },
+          "model": {
+            "modelId": "gpt-5.6-terra",
+            "providerId": "openai",
+            "revision": "synthetic-wire-v1"
+          },
+          "requestId": "f5b91b1d-5953-433c-a7fd-4e354ea4ce08"
+        },
+        "schemaVersion": 1,
+        "status": {
+          "detail": {
+            "epoch": "5bf7d166-cdd2-4eb9-9890-09cd783a6019",
+            "operationId": "f5b91b1d-5953-433c-a7fd-4e354ea4ce08",
+            "phase": "writing-start-status",
+            "safeCause": "writing_start_intent_mismatch",
+            "sqlFence": "1",
+            "sqliteCode": null,
+            "sqliteExtendedCode": null
+          },
+          "type": "unconfirmed"
+        }
+      }
+    }
+  ],
+  "schemaVersion": 1
+}

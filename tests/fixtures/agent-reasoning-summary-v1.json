@@ -1,0 +1,337 @@
+[
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 1,
+    "timestampMs": 1700000000000,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "turnStarted",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "contextSnapshotId": "00000000-0000-0000-0000-000000000003",
+      "model": {
+        "providerId": "fixture",
+        "modelId": "reasoning",
+        "revision": "1"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 2,
+    "timestampMs": 1700000000001,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "phaseChanged",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "phase": "runningModel"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 3,
+    "timestampMs": 1700000000002,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "modelRequestStarted",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "attemptId": "00000000-0000-0000-0000-00000000000a",
+      "model": {
+        "providerId": "fixture",
+        "modelId": "reasoning",
+        "revision": "1"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 4,
+    "timestampMs": 1700000000003,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "modelResponseStarted",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "attemptId": "00000000-0000-0000-0000-00000000000a",
+      "responseId": "r1",
+      "model": null
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 5,
+    "timestampMs": 1700000000004,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "itemStarted",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000014",
+      "kind": {
+        "type": "reasoningSummary",
+        "parts": []
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 6,
+    "timestampMs": 1700000000005,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "reasoningSummaryPartAdded",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000014",
+      "summaryIndex": "-9223372036854775808"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 7,
+    "timestampMs": 1700000000006,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "reasoningSummaryDelta",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000014",
+      "summaryIndex": "-9223372036854775808",
+      "text": "A1你"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 8,
+    "timestampMs": 1700000000007,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "reasoningSummaryDelta",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000014",
+      "summaryIndex": "9223372036854775807",
+      "text": "B🦀"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 9,
+    "timestampMs": 1700000000008,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "reasoningSummaryDelta",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000014",
+      "summaryIndex": "-9223372036854775808",
+      "text": "A2"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 10,
+    "timestampMs": 1700000000009,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "itemAccepted",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000014",
+      "kind": {
+        "type": "reasoningSummary",
+        "parts": [
+          {
+            "index": "0",
+            "startByte": 0,
+            "lenByte": 9
+          },
+          {
+            "index": "1",
+            "startByte": 9,
+            "lenByte": 4
+          }
+        ]
+      },
+      "text": "完成你🙂",
+      "phase": null,
+      "source": {
+        "attemptId": "00000000-0000-0000-0000-00000000000a",
+        "ordinal": 0,
+        "providerItemId": "rs-one",
+        "providerDataJson": null
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 11,
+    "timestampMs": 1700000000010,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "itemStarted",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000015",
+      "kind": {
+        "type": "reasoningSummary",
+        "parts": []
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 12,
+    "timestampMs": 1700000000011,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "reasoningSummaryPartAdded",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000015",
+      "summaryIndex": "-1"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 13,
+    "timestampMs": 1700000000012,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "reasoningSummaryDelta",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000015",
+      "summaryIndex": "-1",
+      "text": "interrupted"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 14,
+    "timestampMs": 1700000000013,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "modelRequestFailed",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "attemptId": "00000000-0000-0000-0000-00000000000a",
+      "error": "model response ended before completion",
+      "retryable": true,
+      "category": "provider"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 15,
+    "timestampMs": 1700000000014,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "modelRequestStarted",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "attemptId": "00000000-0000-0000-0000-00000000000b",
+      "model": {
+        "providerId": "fixture",
+        "modelId": "reasoning",
+        "revision": "1"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 16,
+    "timestampMs": 1700000000015,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "modelResponseStarted",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "attemptId": "00000000-0000-0000-0000-00000000000b",
+      "responseId": "r2",
+      "model": null
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 17,
+    "timestampMs": 1700000000016,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "itemAccepted",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000016",
+      "kind": {
+        "type": "reasoningSummary",
+        "parts": [
+          {
+            "index": "9007199254740993",
+            "startByte": 0,
+            "lenByte": 6
+          }
+        ]
+      },
+      "text": "稀疏",
+      "phase": null,
+      "source": {
+        "attemptId": "00000000-0000-0000-0000-00000000000b",
+        "ordinal": 0,
+        "providerItemId": "rs-sparse",
+        "providerDataJson": null
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 18,
+    "timestampMs": 1700000000017,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "itemAccepted",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "itemId": "00000000-0000-0000-0000-000000000017",
+      "kind": {
+        "type": "reasoningSummary",
+        "parts": []
+      },
+      "text": "",
+      "phase": null,
+      "source": {
+        "attemptId": "00000000-0000-0000-0000-00000000000b",
+        "ordinal": 1,
+        "providerItemId": "rs-empty",
+        "providerDataJson": null
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 19,
+    "timestampMs": 1700000000018,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "modelRequestFinished",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "attemptId": "00000000-0000-0000-0000-00000000000b",
+      "inputTokens": null,
+      "outputTokens": null
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "00000000-0000-0000-0000-000000000001",
+    "seq": 20,
+    "timestampMs": 1700000000019,
+    "requestId": "00000000-0000-0000-0000-000000000004",
+    "payload": {
+      "type": "turnFinished",
+      "turnId": "00000000-0000-0000-0000-000000000002",
+      "outcome": "completed"
+    }
+  }
+]

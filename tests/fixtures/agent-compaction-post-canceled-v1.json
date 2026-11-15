@@ -1,0 +1,120 @@
+[
+  {
+    "schemaVersion": 1,
+    "conversationId": "0379266f-60f0-4488-b855-fd2aee595fa5",
+    "seq": 1,
+    "timestampMs": 1792981428507,
+    "requestId": "d51c5b12-87f5-4eb6-b555-10c51f156401",
+    "payload": {
+      "type": "turnStarted",
+      "turnId": "df67b119-f091-4977-be02-7c77ab50b081",
+      "contextSnapshotId": "109784d1-6607-454c-9226-c2a3b50bc509",
+      "model": {
+        "providerId": "deepseek",
+        "modelId": "deepseek-v4-pro",
+        "revision": null
+      },
+      "taskKind": "compact"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "0379266f-60f0-4488-b855-fd2aee595fa5",
+    "seq": 2,
+    "timestampMs": 1792981428512,
+    "requestId": "d51c5b12-87f5-4eb6-b555-10c51f156401",
+    "payload": {
+      "type": "itemStarted",
+      "turnId": "df67b119-f091-4977-be02-7c77ab50b081",
+      "itemId": "01a17605-691f-7e11-af7d-f3cd06fb4be6",
+      "kind": {
+        "type": "contextCompaction"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "0379266f-60f0-4488-b855-fd2aee595fa5",
+    "seq": 3,
+    "timestampMs": 1792981428514,
+    "requestId": "d51c5b12-87f5-4eb6-b555-10c51f156401",
+    "payload": {
+      "type": "phaseChanged",
+      "turnId": "df67b119-f091-4977-be02-7c77ab50b081",
+      "phase": "runningModel"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "0379266f-60f0-4488-b855-fd2aee595fa5",
+    "seq": 4,
+    "timestampMs": 1792981428517,
+    "requestId": "d51c5b12-87f5-4eb6-b555-10c51f156401",
+    "payload": {
+      "type": "modelRequestStarted",
+      "turnId": "df67b119-f091-4977-be02-7c77ab50b081",
+      "attemptId": "13f5bbd8-5852-42d0-9c5b-10489e97488c",
+      "model": {
+        "providerId": "deepseek",
+        "modelId": "deepseek-v4-pro",
+        "revision": null
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "0379266f-60f0-4488-b855-fd2aee595fa5",
+    "seq": 5,
+    "timestampMs": 1792981428519,
+    "requestId": "d51c5b12-87f5-4eb6-b555-10c51f156401",
+    "payload": {
+      "type": "modelResponseStarted",
+      "turnId": "df67b119-f091-4977-be02-7c77ab50b081",
+      "attemptId": "13f5bbd8-5852-42d0-9c5b-10489e97488c",
+      "responseId": "compact-fixture",
+      "model": {
+        "providerId": "deepseek",
+        "modelId": "deepseek-v4-pro",
+        "revision": null
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "0379266f-60f0-4488-b855-fd2aee595fa5",
+    "seq": 6,
+    "timestampMs": 1792981428522,
+    "requestId": "d51c5b12-87f5-4eb6-b555-10c51f156401",
+    "payload": {
+      "type": "modelRequestFinished",
+      "turnId": "df67b119-f091-4977-be02-7c77ab50b081",
+      "attemptId": "13f5bbd8-5852-42d0-9c5b-10489e97488c",
+      "inputTokens": null,
+      "outputTokens": null
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "0379266f-60f0-4488-b855-fd2aee595fa5",
+    "seq": 7,
+    "timestampMs": 1792981428524,
+    "requestId": "d51c5b12-87f5-4eb6-b555-10c51f156401",
+    "payload": {
+      "type": "itemCompleted",
+      "turnId": "df67b119-f091-4977-be02-7c77ab50b081",
+      "itemId": "01a17605-691f-7e11-af7d-f3cd06fb4be6"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "conversationId": "0379266f-60f0-4488-b855-fd2aee595fa5",
+    "seq": 8,
+    "timestampMs": 1792981428580,
+    "requestId": "d51c5b12-87f5-4eb6-b555-10c51f156401",
+    "payload": {
+      "type": "turnFinished",
+      "turnId": "df67b119-f091-4977-be02-7c77ab50b081",
+      "outcome": "canceled"
+    }
+  }
+]

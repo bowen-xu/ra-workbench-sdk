@@ -1,0 +1,582 @@
+[
+  {
+    "name": "rich-style-boundaries",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "写作😀",
+      "blocks": [
+        {
+          "id": "projection-block-1",
+          "type": "paragraph",
+          "props": {},
+          "content": {
+            "kind": "inline",
+            "items": [
+              {
+                "type": "text",
+                "text": "核心",
+                "styles": [
+                  "bold"
+                ]
+              },
+              {
+                "type": "text",
+                "text": "概念",
+                "styles": []
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": true,
+    "expectedText": "核心概念"
+  },
+  {
+    "name": "inline-families",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "写作😀",
+      "blocks": [
+        {
+          "id": "projection-block-2",
+          "type": "paragraph",
+          "props": {},
+          "content": {
+            "kind": "inline",
+            "items": [
+              {
+                "type": "text",
+                "text": "A",
+                "styles": []
+              },
+              {
+                "type": "link",
+                "href": "https://example.invalid",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "B",
+                    "styles": []
+                  },
+                  {
+                    "type": "text",
+                    "text": "C",
+                    "styles": [
+                      "italic"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "inlineFormula",
+                "source": "x+y"
+              },
+              {
+                "type": "mention",
+                "targetKind": "paper",
+                "targetId": "paper-1",
+                "labelSnapshot": "Fallback",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "自",
+                    "styles": []
+                  },
+                  {
+                    "type": "text",
+                    "text": "定义",
+                    "styles": []
+                  }
+                ]
+              },
+              {
+                "type": "mention",
+                "targetKind": "paper",
+                "targetId": "paper-1",
+                "labelSnapshot": "来源"
+              },
+              {
+                "type": "mention",
+                "targetKind": "paper",
+                "targetId": "paper-1",
+                "labelSnapshot": "Must not appear",
+                "content": []
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "name": "table-empty-rows-and-cells",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "写作😀",
+      "blocks": [
+        {
+          "id": "projection-block-3",
+          "type": "table",
+          "props": {},
+          "content": {
+            "kind": "table",
+            "rows": [
+              [
+                {
+                  "kind": "inline",
+                  "items": []
+                }
+              ],
+              [
+                {
+                  "kind": "inline",
+                  "items": []
+                },
+                {
+                  "kind": "inline",
+                  "items": []
+                }
+              ],
+              [
+                {
+                  "kind": "inline",
+                  "items": [
+                    {
+                      "type": "text",
+                      "text": "A",
+                      "styles": []
+                    }
+                  ]
+                },
+                {
+                  "kind": "inline",
+                  "items": [
+                    {
+                      "type": "text",
+                      "text": "B",
+                      "styles": []
+                    },
+                    {
+                      "type": "text",
+                      "text": "C",
+                      "styles": []
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": true,
+    "expectedText": "\t\nA\tBC"
+  },
+  {
+    "name": "nested-depth-first-and-whitespace",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "写作😀",
+      "blocks": [
+        {
+          "id": "projection-block-6",
+          "type": "paragraph",
+          "props": {},
+          "content": {
+            "kind": "inline",
+            "items": [
+              {
+                "type": "text",
+                "text": " \n ",
+                "styles": []
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "projection-block-5",
+              "type": "paragraph",
+              "props": {},
+              "content": {
+                "kind": "inline",
+                "items": [
+                  {
+                    "type": "text",
+                    "text": "父",
+                    "styles": [
+                      "bold"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "子",
+                    "styles": []
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "id": "projection-block-4",
+                  "type": "paragraph",
+                  "props": {},
+                  "content": {
+                    "kind": "inline",
+                    "items": [
+                      {
+                        "type": "text",
+                        "text": "后代",
+                        "styles": []
+                      }
+                    ]
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projection-block-7",
+          "type": "paragraph",
+          "props": {},
+          "content": {
+            "kind": "inline",
+            "items": [
+              {
+                "type": "text",
+                "text": "末尾",
+                "styles": []
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": true,
+    "expectedText": " \n \n父子\n后代\n末尾"
+  },
+  {
+    "name": "formula-reference-asset-unsupported",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "写作😀",
+      "blocks": [
+        {
+          "id": "projection-block-8",
+          "type": "formulaBlock",
+          "props": {},
+          "content": {
+            "kind": "formula",
+            "source": "a=b"
+          },
+          "children": []
+        },
+        {
+          "id": "projection-block-9",
+          "type": "image",
+          "props": {},
+          "content": {
+            "kind": "asset",
+            "assetId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "displayName": "figure.png",
+            "caption": "说明",
+            "mimeType": "application/octet-stream"
+          },
+          "children": []
+        },
+        {
+          "id": "projection-block-10",
+          "type": "researchObjectReference",
+          "props": {},
+          "content": {
+            "kind": "reference",
+            "targetKind": "paper",
+            "targetId": "paper-1",
+            "labelSnapshot": "文献",
+            "quoteSnapshot": "摘录"
+          },
+          "children": []
+        },
+        {
+          "id": "projection-block-11",
+          "type": "unsupported",
+          "props": {},
+          "content": {
+            "kind": "unsupported",
+            "originalType": "future",
+            "rawJson": "{\"retained\":true}"
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "name": "quote-fallback-and-none",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "写作😀",
+      "blocks": [
+        {
+          "id": "projection-block-12",
+          "type": "divider",
+          "props": {},
+          "content": {
+            "kind": "none"
+          },
+          "children": []
+        },
+        {
+          "id": "projection-block-13",
+          "type": "paragraph",
+          "props": {},
+          "content": {
+            "kind": "inline",
+            "items": []
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": true,
+    "expectedText": ""
+  },
+  {
+    "name": "multiline-inline-crlf",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "写作😀",
+      "blocks": [
+        {
+          "id": "projection-block-14",
+          "type": "paragraph",
+          "props": {},
+          "content": {
+            "kind": "inline",
+            "items": [
+              {
+                "type": "text",
+                "text": "\r\n\t",
+                "styles": []
+              },
+              {
+                "type": "text",
+                "text": "第一行\r\n第二行",
+                "styles": []
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": true,
+    "expectedText": "\r\n\t第一行\r\n第二行"
+  },
+  {
+    "name": "asset-and-reference-empty-parts",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "写作😀",
+      "blocks": [
+        {
+          "id": "projection-block-15",
+          "type": "file",
+          "props": {},
+          "content": {
+            "kind": "asset",
+            "assetId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "displayName": "",
+            "caption": " 文字 ",
+            "mimeType": "application/octet-stream"
+          },
+          "children": []
+        },
+        {
+          "id": "projection-block-16",
+          "type": "researchObjectReference",
+          "props": {},
+          "content": {
+            "kind": "reference",
+            "targetKind": "paper",
+            "targetId": "paper-1",
+            "labelSnapshot": "",
+            "quoteSnapshot": "引用"
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": false
+  },
+  {
+    "name": "unicode-title-unit-limit",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "写作😀",
+      "blocks": [
+        {
+          "id": "unicode-title",
+          "type": "paragraph",
+          "props": {},
+          "content": {
+            "kind": "inline",
+            "items": [
+              {
+                "type": "text",
+                "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+                "styles": []
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": true,
+    "expectedText": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+  },
+  {
+    "name": "unicode-title-surrogate-boundary",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "写作😀",
+      "blocks": [
+        {
+          "id": "unicode-title",
+          "type": "paragraph",
+          "props": {},
+          "content": {
+            "kind": "inline",
+            "items": [
+              {
+                "type": "text",
+                "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa😀",
+                "styles": []
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": true,
+    "expectedText": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa😀"
+  },
+  {
+    "name": "valid-formula-and-owned-asset",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "owned",
+      "blocks": [
+        {
+          "id": "projection-block-8",
+          "type": "formulaBlock",
+          "props": {},
+          "content": {
+            "kind": "formula",
+            "source": "a=b"
+          },
+          "children": []
+        },
+        {
+          "id": "projection-block-9",
+          "type": "image",
+          "props": {},
+          "content": {
+            "kind": "asset",
+            "assetId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "displayName": "figure.png",
+            "caption": "说明",
+            "mimeType": "application/octet-stream"
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": true,
+    "expectedText": "a=b\nfigure.png 说明"
+  },
+  {
+    "name": "empty-document",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "empty",
+      "blocks": []
+    },
+    "valid": true,
+    "expectedText": ""
+  },
+  {
+    "name": "unsupported-version",
+    "content": {
+      "schemaVersion": 2,
+      "noteId": "note",
+      "blocks": []
+    },
+    "valid": false
+  },
+  {
+    "name": "duplicate-block-identity",
+    "content": {
+      "schemaVersion": 1,
+      "noteId": "note",
+      "blocks": [
+        {
+          "id": "projection-block-1",
+          "type": "paragraph",
+          "props": {},
+          "content": {
+            "kind": "inline",
+            "items": [
+              {
+                "type": "text",
+                "text": "核心",
+                "styles": [
+                  "bold"
+                ]
+              },
+              {
+                "type": "text",
+                "text": "概念",
+                "styles": []
+              }
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "projection-block-1",
+          "type": "paragraph",
+          "props": {},
+          "content": {
+            "kind": "inline",
+            "items": [
+              {
+                "type": "text",
+                "text": "核心",
+                "styles": [
+                  "bold"
+                ]
+              },
+              {
+                "type": "text",
+                "text": "概念",
+                "styles": []
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    },
+    "valid": false
+  }
+]

@@ -1,6 +1,8 @@
 import {decodeAgentQueuedText,decodeAgentUserInput,type AgentUserInput,type AgentConversationProjection} from "@research-assistant/core/agent";
 import {isAgentSteeringRejection} from "./steeringRejection";
 
+export type AgentSteeringQueueRejection<S> = (request: S & {inputId: string; text: string; userInput?: readonly AgentUserInput[]}) => Promise<boolean>;
+
 export interface AgentSteeringState<S> {
   readonly phase:"idle"|"sending"|"uncertain"|"accepted"|"rejected"|"queued";
   readonly request:(S&{readonly inputId:string;readonly text:string;readonly userInput?:readonly AgentUserInput[]})|null;
@@ -19,7 +21,7 @@ export class AgentSteeringController<S extends {conversationId:string;turnId:str
   private readonly confirmations=new Map<string,()=>void|boolean|Promise<void|boolean>>();
   private readonly confirmedHistory=new Set<string>();
   private readonly settling=new Set<string>();
-  private queueRejected:((request:S&{inputId:string;text:string;userInput?:readonly AgentUserInput[]})=>Promise<boolean>)|undefined;
+  private queueRejected: AgentSteeringQueueRejection<S> | undefined;
   private prepareNewIntent: ((inputId:string)=>Promise<void>)|undefined;
   private intentReady = false;
   private isAdmissionDisabled: (() => boolean) | undefined;
@@ -28,7 +30,7 @@ export class AgentSteeringController<S extends {conversationId:string;turnId:str
   getSnapshot=():AgentSteeringState<S>=>this.state;
   subscribe=(listener:()=>void):(()=>void)=>{this.listeners.add(listener);return()=>{this.listeners.delete(listener);};};
   private update(state:AgentSteeringState<S>):void{if(!this.live)return;this.state={...state,awaitingHistory:state.awaitingHistory??this.state.awaitingHistory??[],transferFailures:state.transferFailures??this.state.transferFailures??[]};if(state.phase==="accepted"){const acknowledge=this.acknowledgment;this.acknowledgment=undefined;acknowledge?.();}for(const listener of this.listeners)listener();}
-  async submit(scope:S,text:string,acknowledgment?:()=>void,rejection?:()=>void,userInput?:readonly AgentUserInput[],confirmed?:()=>void|boolean|Promise<void|boolean>,queueRejected?:typeof this.queueRejected,isAdmissionDisabled?:()=>boolean):Promise<boolean>{
+  async submit(scope:S,text:string,acknowledgment?:()=>void,rejection?:()=>void,userInput?:readonly AgentUserInput[],confirmed?:()=>void|boolean|Promise<void|boolean>,queueRejected?:AgentSteeringQueueRejection<S>,isAdmissionDisabled?:()=>boolean):Promise<boolean>{
     if(!this.live||this.state.phase==="sending"||this.state.phase==="uncertain")return false;
     if(isAdmissionDisabled?.()){rejection?.();return false;}
     let value:string;

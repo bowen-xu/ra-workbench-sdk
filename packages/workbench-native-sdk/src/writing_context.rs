@@ -91,7 +91,7 @@ pub enum ContextDecision {
     ProjectAccepted {},
     Registered {},
     Materialized {
-        source: research_agent_core::submission::ContextText,
+        source: research_agent_api::submission::ContextText,
         used_bytes: usize,
     },
     Rejected {

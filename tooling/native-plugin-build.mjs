@@ -1,3 +1,4 @@
+import {runBuildCommand} from "./build-command.mjs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import os from "node:os";
@@ -87,10 +88,8 @@ export async function buildNativePlugin(profileId, arguments_ = process.argv.sli
   await fs.mkdir(receiptRoot, {recursive: true});
 
   async function run(label, command, args, cwd = project, extraEnv = {}) {
-    const result = spawnSync(command, args, {cwd, encoding: "utf8", maxBuffer: 64 * 1024 * 1024,
-      env: {...process.env, ...extraEnv}});
     const log = path.join(receiptRoot, label + ".log");
-    await fs.writeFile(log, (result.stdout ?? "") + (result.stderr ?? "") + (result.error?.message ?? ""));
+    const result = await runBuildCommand(label, command, args, {cwd, env: {...process.env, ...extraEnv}}, log);
     receipt.commands.push({label, command, args, cwd, exitCode: result.status, log});
     if (result.status !== 0) throw new Error(`${label} failed (${result.status ?? result.error?.code ?? "unknown"}); see ${log}`);
     return result.stdout;

@@ -1,3 +1,4 @@
+import {runBuildCommand} from "./build-command.mjs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import os from "node:os";
@@ -71,9 +72,8 @@ export async function buildFrontendPlugin(profileId, arguments_ = process.argv.s
 
   async function run(label, command, args, cwd = root) {
     if (command === "pnpm" && !args.includes("--config.verify-deps-before-run=false")) args = ["--config.verify-deps-before-run=false", ...args];
-    const result = spawnSync(command, args, {cwd, encoding: "utf8", maxBuffer: 32 * 1024 * 1024});
     const log = path.join(receiptRoot, label + ".log");
-    await fs.writeFile(log, (result.stdout ?? "") + (result.stderr ?? "") + (result.error?.message ?? ""));
+    const result = await runBuildCommand(label, command, args, {cwd}, log);
     receipt.commands.push({label, command, args, cwd, exitCode: result.status, log});
     if (result.status !== 0) throw new Error(`${label} failed (${result.status ?? result.error?.code ?? "unknown"}); see ${log}`);
     return result.stdout;

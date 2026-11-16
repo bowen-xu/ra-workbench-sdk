@@ -6,7 +6,7 @@ import {appendFileSync, writeFileSync} from "node:fs";
 export async function runBuildCommand(label, command, args, options, log) {
   const started = Date.now();
   writeFileSync(log, "");
-  const machineOutput = args.some(value => value.includes("json") || value === "--listFiles");
+  const machineOutput = args.some(value => value.includes("json") || value === "--listFiles" || value === "--format-version");
   console.error(`[build] ${label} · ${command} ${args.join(" ")}`);
   const result = await new Promise(resolve => {
     let stdout = "", error;

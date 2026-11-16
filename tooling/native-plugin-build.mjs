@@ -1,7 +1,7 @@
+import {withCachedBuild} from "./build-artifacts.mjs";
 import {runBuildCommand} from "./build-command.mjs";
 import fs from "node:fs/promises";
 import path from "node:path";
-import os from "node:os";
 import crypto from "node:crypto";
 import {spawnSync} from "node:child_process";
 import {createRequire} from "node:module";
@@ -63,6 +63,12 @@ export function dependencyPaths(text) {
 }
 
 export async function buildNativePlugin(profileId, arguments_ = process.argv.slice(2)) {
+  const receipt = await withCachedBuild({root, kind: "native", args: [profileId, ...arguments_], inputs: ["native", "native-build.json", "scripts", "sdk-dependency.json"]}, context => buildNativePackage(profileId, arguments_, context));
+  console.log(JSON.stringify({status: receipt.status, receipt: receipt.receipt, packages: receipt.packageRoot, cacheHit: receipt.cacheHit}));
+  return receipt;
+}
+
+async function buildNativePackage(profileId, arguments_, context) {
   let profile = profiles.get(profileId);
   if (!profile) throw new Error("native_plugin_build_profile_invalid");
   const projectFiles = profileId === "writing_projects" && arguments_.includes("--project-files");
@@ -73,12 +79,11 @@ export async function buildNativePlugin(profileId, arguments_ = process.argv.sli
   const architectures = {arm64: "aarch64", x64: "x86_64"};
   const nativeOs = platforms[process.platform], nativeArch = architectures[process.arch];
   if (!nativeOs || !nativeArch) throw new Error(profile.label + "_native_platform_unsupported: only native Unix build targets are supported");
-  const staging = await fs.realpath(await fs.mkdtemp(path.join(os.tmpdir(), `research-${profile.label}-native-`)));
-  const receiptBase = path.join(root, `.tmp/runtime-plugins/${profile.label}-native-build`);
-  const receiptRoot = path.join(receiptBase, path.basename(staging));
-  const packageRoot = path.join(receiptRoot, `packages/${profile.id}`);
+  const staging = context.workDirectory;
+  const receiptRoot = context.logDirectory;
+  const packageRoot = context.output;
   const project = path.join(staging, localProjects[0]);
-  const target = path.join(staging, "target");
+  const target = path.join(root, ".cache/cargo", "native", nativeOs + "-" + nativeArch);
   const receipt = {task: profile.task, status: "running", staging, packageRoot, commands: [], sources: [],
     scope: "Independent native binary and package only; no application installer, publication or desktop acceptance.",
     nativePlatform: {os: nativeOs, arch: nativeArch},
@@ -142,7 +147,7 @@ export async function buildNativePlugin(profileId, arguments_ = process.argv.sli
     receipt.dependencies = metadata.packages.map(value => ({name: value.name, version: value.version,
       source: value.source, manifestPath: value.manifest_path, license: value.license, licenseFile: value.license_file}));
     const buildOutput = await run("build", "cargo", ["build", "--release", "--locked", "--offline", "--target", hostTriple, "--bin", profile.binary, "--message-format", "json"], project,
-      {CARGO_TARGET_DIR: target, CARGO_INCREMENTAL: "0"});
+      {CARGO_TARGET_DIR: target});
     const compilerArtifacts = buildOutput.split("\n").filter(Boolean).map(line => JSON.parse(line))
       .filter(value => value.reason === "compiler-artifact");
     await json(path.join(receiptRoot, "compiler-artifacts.json"), compilerArtifacts);
@@ -151,20 +156,28 @@ export async function buildNativePlugin(profileId, arguments_ = process.argv.sli
     const dependenciesDirectory = path.join(path.dirname(binaryArtifact.executable), "deps");
     receipt.depInfo = [];
     const actualSources = new Set();
-    const prefixes = [...allowedNames].map(name => name.replaceAll("-", "_") + "-");
-    prefixes.push(profile.binary.replaceAll("-", "_") + "-");
-    for (const file of (await fs.readdir(dependenciesDirectory)).sort()) {
-      if (!file.endsWith(".d") || !prefixes.some(prefix => file.startsWith(prefix))) continue;
-      const original = path.join(dependenciesDirectory, file), bytes = await fs.readFile(original);
+    const localManifests = new Set(local.map(value => value.manifest_path));
+    const sourceArtifacts = compilerArtifacts.filter(value => localManifests.has(value.manifest_path)
+      && value.target.kind.some(kind => ["lib", "bin"].includes(kind)));
+    const externalSources = metadata.packages.filter(value => value.source !== null)
+      .map(value => path.dirname(value.manifest_path));
+    for (const artifact of sourceArtifacts) {
+      const library = artifact.filenames.find(file => file.endsWith(".rlib"));
+      const original = artifact.executable ? artifact.executable + ".d"
+        : path.join(dependenciesDirectory, path.basename(library, ".rlib").replace(/^lib/u, "") + ".d");
+      const file = path.basename(original), bytes = await fs.readFile(original);
       await fs.copyFile(original, path.join(receiptRoot, file));
       const inputs = await Promise.all(dependencyPaths(bytes.toString("utf8")).map(value => fs.realpath(path.resolve(project, value))));
       for (const input of inputs) {
-        if (inside(root, input)) throw new Error(profile.label + "_native_private_source_entered_build: " + input);
-        if (inside(staging, input) && !inside(target, input)) actualSources.add(input);
+        if (!inside(staging, input) && !inside(target, input)
+          && !externalSources.some(directory => inside(directory, input))) {
+          throw new Error(profile.label + "_native_private_source_entered_build: " + input);
+        }
+        if (inside(staging, input)) actualSources.add(input);
       }
       receipt.depInfo.push({file, sha256: digest(bytes), inputs});
     }
-    if (receipt.depInfo.length !== prefixes.length || !actualSources.size) throw new Error(profile.label + "_native_dep_info_incomplete");
+    if (receipt.depInfo.length !== allowedNames.size + 1 || !actualSources.size) throw new Error(profile.label + "_native_dep_info_incomplete");
     for (const source of receipt.projectResourceMetadata ?? []) {
       if (source.sha256 !== digest(await fs.readFile(path.join(root, source.file))))
         throw new Error("writing_native_resource_metadata_changed_during_build: " + source.file);
@@ -269,8 +282,6 @@ export async function buildNativePlugin(profileId, arguments_ = process.argv.sli
     process.exitCode = 1;
   } finally {
     await json(path.join(receiptRoot, "receipt.json"), receipt);
-    await json(path.join(receiptBase, "latest.json"), {receipt: path.join(receiptRoot, "receipt.json"), status: receipt.status});
-    console.log(JSON.stringify({status: receipt.status, receipt: path.join(receiptRoot, "receipt.json"), packages: path.join(receiptRoot, "packages"), staging}));
     if (receipt.error) console.error(receipt.error);
   }
   return receipt;

@@ -1,7 +1,7 @@
+import {withCachedBuild} from "./build-artifacts.mjs";
 import {runBuildCommand} from "./build-command.mjs";
 import fs from "node:fs/promises";
 import path from "node:path";
-import os from "node:os";
 import crypto from "node:crypto";
 import {spawnSync} from "node:child_process";
 import {createRequire} from "node:module";
@@ -19,6 +19,17 @@ const profiles = new Map([
 
 /** Built-in frontend projects share the original isolated artifact build. */
 export async function buildFrontendPlugin(profileId, arguments_ = process.argv.slice(2)) {
+  const receipt = await withCachedBuild({
+    root, kind: "plugin", native: profileId !== "note_manager",
+    inputs: ["src", "native", "scripts", "resources", "patches", "native-build.json", "package.json", "pnpm-lock.yaml",
+      "pnpm-workspace.yaml", "sdk-dependency.json", "tsconfig.json", "vite.config.ts", "LICENSE", "NOTICE", ".cargo"],
+    args: [profileId, ...arguments_.filter(value => value !== "--project-files")],
+  }, context => buildFrontendPackage(profileId, arguments_, context));
+  console.log(JSON.stringify({status: receipt.status, receipt: receipt.receipt, output: receipt.output, cacheHit: receipt.cacheHit}));
+  return receipt;
+}
+
+async function buildFrontendPackage(profileId, arguments_, context) {
   let profile = profiles.get(profileId);
   if (!profile) throw new Error("frontend_plugin_build_profile_invalid");
   // The writing project's normal artifact includes its existing native domain.
@@ -30,9 +41,8 @@ export async function buildFrontendPlugin(profileId, arguments_ = process.argv.s
   const offline = arguments_.includes("--offline");
   const project = root;
   const production = path.join(project, "src");
-  const staging = await fs.realpath(await fs.mkdtemp(path.join(os.tmpdir(), `research-${profile.label}-plugin-`)));
-  const receiptBase = path.join(root, ".tmp/runtime-plugins", profile.receipt);
-  const receiptRoot = path.join(receiptBase, path.basename(staging));
+  const staging = context.workDirectory;
+  const receiptRoot = context.logDirectory;
   const stagedProject = path.join(staging, "plugin");
   const artifacts = path.join(staging, "artifacts");
   const require = createRequire(path.join(root, "package.json"));
@@ -272,11 +282,13 @@ export async function buildFrontendPlugin(profileId, arguments_ = process.argv.s
     receipt.compatibility = {accepted: {pluginId: manifest.id, apiVersion: manifest.apiVersion}, rejected: incompatible, entryEvaluated: false};
     await run("typecheck", "pnpm", ["exec", "tsc", "-p", "tsconfig.json", "--listFiles"], stagedProject);
     const loaded = await fs.readFile(path.join(receiptRoot, "typecheck.log"), "utf8");
-    if (loaded.includes(root) || /\/node_modules\/@research-assistant\/(?:core|data|writing)\/src\//u.test(loaded)) {
+    const compilerFiles = loaded.split(/\r?\n/u).filter(file => path.isAbsolute(file));
+    if (compilerFiles.some(file => !file.startsWith(staging + path.sep))
+      || /\/node_modules\/@research-assistant\/(?:core|data|writing)\/src\//u.test(loaded)) {
       throw new Error("plugin_type_closure_violation: application or unbuilt public source entered the independent consumer");
     }
     await run("build", "pnpm", ["exec", "vite", "build"], stagedProject);
-    const output = path.join(receiptRoot, "package");
+    const output = context.output;
     await fs.rm(output, {recursive: true, force: true});
     await fs.cp(path.join(stagedProject, "build"), output, {recursive: true});
     await fs.rename(path.join(output, "source-closure.json"), path.join(receiptRoot, "source-closure.json"));
@@ -335,7 +347,7 @@ export async function buildFrontendPlugin(profileId, arguments_ = process.argv.s
       const nativeManifest = JSON.parse(await fs.readFile(path.join(native.packageRoot, "manifest.json"), "utf8"));
       if (projectFiles) assertWritingProjectNativeBuildManifest(nativeManifest);
       else assertLiteratureNativeBuildManifest(nativeManifest);
-      const nativeReceipt = path.join(path.dirname(path.dirname(native.packageRoot)), "receipt.json");
+      const nativeReceipt = native.receipt;
       receipt.nativeBuild = {receipt: nativeReceipt, sha256: digest(await fs.readFile(nativeReceipt)), artifacts: native.artifacts};
       for (const artifact of native.artifacts.filter(value => value.file !== "manifest.json")) {
         const bytes = await fs.readFile(path.join(native.packageRoot, artifact.file));
@@ -392,8 +404,6 @@ export async function buildFrontendPlugin(profileId, arguments_ = process.argv.s
     process.exitCode = 1;
   } finally {
     await json(path.join(receiptRoot, "receipt.json"), receipt);
-    await json(path.join(receiptBase, "latest.json"), {receipt: path.join(receiptRoot, "receipt.json"), status: receipt.status});
-    console.log(JSON.stringify({status: receipt.status, receipt: path.join(receiptRoot, "receipt.json"), staging}));
     if (receipt.error) console.error(receipt.error);
   }
 

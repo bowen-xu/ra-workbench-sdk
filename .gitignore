@@ -87,3 +87,6 @@ rustc-ice-*.txt
 # Generated public package declarations and package archives
 /packages/*/lib/
 /packages/*/*.tgz
+
+# Reusable independent project build artifacts
+/artifacts/

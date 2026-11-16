@@ -21,6 +21,10 @@ pnpm test -- packages/core/src/notes/noteCatalogText.test.ts
 pnpm test:native
 ```
 
-Wasm 构建需要 wasm32-unknown-unknown 和 wasm-bindgen-cli 0.2.105。NOTE_QUERY_RUSTC 与 NOTE_QUERY_WASM_BINDGEN 可选择预先准备的本地工具链。输出位于 .tmp/artifacts/，包含公开包、纯 Native 源码产物、查询 Wasm、构建工具和 sdk-artifacts.json。清单记录每项版本与 SHA-256，完成后整体替换产物目录。
+Wasm 构建需要 wasm32-unknown-unknown 和 wasm-bindgen-cli 0.2.105。NOTE_QUERY_RUSTC 与 NOTE_QUERY_WASM_BINDGEN 可选择预先准备的本地工具链。公开分发目录由 artifacts/sdk/latest.json 指向，包含公开包、纯 Native 源码产物、查询 Wasm、构建工具和 sdk-artifacts.json。清单记录每项版本与 SHA-256，构建成功后更新产物清单。
 
 消费者执行产物目录中的 install-sdk.mjs，版本和完整性通过后将依赖安装到消费者自己的 .dependencies/sdk/。源码联调和完整应用契约验收由 research-assistant 的 integration/ 负责。
+
+## 构建缓存与产物
+
+标准构建入口复用通过完整性校验的既有包。产物在本工程 `artifacts/<kind>/<内容哈希>/package/`，当前入口在 `artifacts/<kind>/latest.json`。回执随产物保存，`.cache/build` 保存索引，`.cache/logs` 保存日志，`.cache/work` 为完成后清理的隔离工作目录。清理编译缓存后仍可复用已保存的当前包。

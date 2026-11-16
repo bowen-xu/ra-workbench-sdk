@@ -107,3 +107,24 @@ test("isolated source archives build and reuse packages without Git metadata", (
   assert.equal((await withCachedBuild(options, build)).cacheHit, false);
   assert.equal(count(), 2);
 }));
+
+test("source archive builds exclude generated resources while tracking authored sources", () => fixture(async ({root, options, build, count}) => {
+  await fs.rm(path.join(root, ".git"), {recursive: true});
+  await fs.mkdir(path.join(root, "apps/web/src/build"), {recursive: true});
+  const source = path.join(root, "apps/web/src/build/document.ts");
+  await fs.writeFile(source, "authored source");
+  const selected = {...options, inputs: ["apps/web"], exclude: ["apps/web/public/dictionary"]};
+  const generatedBuild = async context => {
+    await fs.mkdir(path.join(root, "apps/web/src/.generated"), {recursive: true});
+    await fs.mkdir(path.join(root, "apps/web/public/dictionary"), {recursive: true});
+    await fs.writeFile(path.join(root, "apps/web/src/.generated/query.js"), "generated Wasm loader");
+    await fs.writeFile(path.join(root, "apps/web/public/dictionary/manifest.json"), "generated dictionary");
+    return build(context);
+  };
+  const first = await withCachedBuild(selected, generatedBuild);
+  assert.equal((await withCachedBuild(selected, generatedBuild)).cacheHit, true);
+  await fs.writeFile(source, "changed source");
+  const changed = await withCachedBuild(selected, generatedBuild);
+  assert.notEqual(changed.buildKey, first.buildKey);
+  assert.equal(count(), 2);
+}));

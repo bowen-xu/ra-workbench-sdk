@@ -7,7 +7,7 @@ import {fileURLToPath} from "node:url";
 const hash = bytes => createHash("sha256").update(bytes).digest("hex");
 const tooling = path.dirname(fileURLToPath(import.meta.url));
 
-async function sourceFiles(root, inputs) {
+async function sourceFiles(root, inputs, exclude) {
   try {
     const project = execFileSync("git", ["rev-parse", "--show-toplevel"], {cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"]}).trim();
     if (await fs.realpath(project) === await fs.realpath(root)) {
@@ -21,9 +21,10 @@ async function sourceFiles(root, inputs) {
   const roots = inputs.length ? inputs : ["src", "scripts", "tooling", "packages", "apps", "patches", "resources", "native",
     "package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "tsconfig.json", "tsconfig.base.json", "vite.config.ts",
     "native-build.json", "sdk-dependency.json", "LICENSE", "NOTICE", ".gitignore", ".cargo"];
-  const ignored = new Set([".git", "node_modules", ".cache", "artifacts", ".tmp", ".dependencies", "confidential"]);
+  const ignored = new Set([".git", "node_modules", ".cache", ".generated", "artifacts", ".tmp", ".dependencies", "confidential"]);
   async function visit(relative) {
     if (relative.split("/").some(part => ignored.has(part))) return [];
+    if (exclude.some(input => relative === input || relative.startsWith(input + "/"))) return [];
     const info = await fs.lstat(path.join(root, relative)).catch(error => {
       if (error.code === "ENOENT") return undefined;
       throw error;
@@ -45,9 +46,9 @@ async function sourceFiles(root, inputs) {
   return (await Promise.all(roots.map(visit))).flat();
 }
 
-export async function buildInputFingerprint(root, {kind, args = [], inputs = [], toolchains = true, native = false}) {
+export async function buildInputFingerprint(root, {kind, args = [], inputs = [], exclude = [], toolchains = true, native = false}) {
   const fingerprint = createHash("sha256");
-  fingerprint.update(JSON.stringify({kind, args: args.filter(value => value !== "--offline"),
+  fingerprint.update(JSON.stringify({kind, exclude, args: args.filter(value => value !== "--offline"),
     platform: process.platform, arch: process.arch, node: process.version,
     environment: Object.entries(process.env).filter(([key]) => key !== "CARGO_NET_OFFLINE" && /^(?:RUST|CARGO|CC$|CXX$|CFLAGS$|CXXFLAGS$|MACOSX_|NODE_OPTIONS$|NODE_ENV$|VITE_|RESEARCH_ASSISTANT_PREVIEW_HOST$|NOTE_QUERY_|npm_config_(?:production|optional|arch|platform)$)/u.test(key)).sort()}));
   if (toolchains) {
@@ -66,8 +67,9 @@ export async function buildInputFingerprint(root, {kind, args = [], inputs = [],
       fingerprint.update(execFileSync(command, parameters, {cwd: root}));
     }
   }
-  const files = [...new Set(await sourceFiles(root, inputs))].sort()
+  const files = [...new Set(await sourceFiles(root, inputs, exclude))].sort()
     .filter(file => !file.split("/").includes("confidential"))
+    .filter(file => !exclude.some(input => file === input || file.startsWith(input + "/")))
     .filter(file => inputs.length === 0 || inputs.some(input => file === input || file.startsWith(input + "/")));
   for (const file of files) {
     fingerprint.update(file);

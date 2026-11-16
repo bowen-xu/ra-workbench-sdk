@@ -9,6 +9,32 @@ const manifest = JSON.parse(await fs.readFile(path.join(source, 'sdk-artifacts.j
 const pin = JSON.parse(await fs.readFile(path.join(destination, 'sdk-dependency.json'), 'utf8'));
 if (manifest.formatVersion !== 1 || manifest.version !== pin.version) throw new Error('SDK_ARTIFACT_VERSION_MISMATCH');
 const installed = path.join(destination, '.dependencies/sdk');
+async function installationFiles(directory, relative = '') {
+  if (!(await fs.lstat(directory)).isDirectory()) throw new Error('SDK_INSTALLATION_NOT_REGULAR: ' + directory);
+  const files = [];
+  for (const entry of (await fs.readdir(path.join(directory, relative), {withFileTypes: true})).sort((a, b) => a.name.localeCompare(b.name, 'en'))) {
+    if (entry.isDirectory() && ['target', 'node_modules', '.cache'].includes(entry.name)) continue;
+    const file = path.posix.join(relative, entry.name);
+    if (file === 'installation.json') continue;
+    if (entry.isDirectory()) files.push(...await installationFiles(directory, file));
+    else if (entry.isFile()) {
+      const target = path.join(directory, file), stat = await fs.stat(target);
+      files.push({file, mode: stat.mode & 0o777, sha256: createHash('sha256').update(await fs.readFile(target)).digest('hex')});
+    } else throw new Error('SDK_INSTALLATION_NOT_REGULAR: ' + file);
+  }
+  return files;
+}
+try {
+  const state = JSON.parse(await fs.readFile(path.join(installed, 'installation.json'), 'utf8'));
+  if (JSON.stringify(state.manifest) === JSON.stringify(manifest)
+    && JSON.stringify(state.files) === JSON.stringify(await installationFiles(installed))) {
+    console.log('Reusing verified public SDK ' + pin.version + ' for ' + destination);
+    process.exit(0);
+  }
+} catch (error) {
+  if (!['ENOENT', 'ENOTDIR'].includes(error.code) && !(error instanceof SyntaxError)
+    && !error.message.startsWith('SDK_INSTALLATION_NOT_REGULAR:')) throw error;
+}
 const stage = installed + '.staging-' + process.pid;
 await fs.mkdir(stage, {recursive: true});
 for (const artifact of manifest.artifacts) {
@@ -38,6 +64,24 @@ for (const artifact of manifest.artifacts) {
   } else throw new Error('SDK_ARTIFACT_KIND_INVALID');
 }
 await fs.writeFile(path.join(stage, 'sdk-artifacts.json'), JSON.stringify(manifest, null, 2) + '\n');
+const files = await installationFiles(stage);
+const previousFiles = await installationFiles(installed).catch(error => {
+  if (error.code === 'ENOENT' || error.message.startsWith('SDK_INSTALLATION_NOT_REGULAR:')) return [];
+  throw error;
+});
+const priorByPath = new Map(previousFiles.map(file => [file.file, file]));
+for (const file of files) {
+  const prior = priorByPath.get(file.file);
+  const previous = path.join(installed, file.file), target = path.join(stage, file.file);
+  if (prior?.sha256 === file.sha256 && prior.mode === file.mode) {
+    const stat = await fs.stat(previous);
+    await fs.utimes(target, stat.atime, stat.mtime);
+  } else {
+    const now = new Date();
+    await fs.utimes(target, now, now);
+  }
+}
+await fs.writeFile(path.join(stage, 'installation.json'), JSON.stringify({manifest, files}, null, 2) + '\n');
 const previous = installed + '.previous-' + process.pid;
 await fs.rename(installed, previous).catch(error => {if (error.code !== 'ENOENT') throw error;});
 try {await fs.rename(stage, installed);}

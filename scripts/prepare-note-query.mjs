@@ -6,8 +6,8 @@ import {fileURLToPath, pathToFileURL} from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const crate = resolve(root, "packages/note-query");
-const output = resolve(root, ".tmp/note-query/web");
-const target = resolve(root, ".tmp/note-query-target");
+const output = resolve(root, ".cache/note-query/web");
+const target = resolve(root, ".cache/cargo/note-query");
 const cliVersion = "0.2.105";
 
 function run(command, args, inherit = false, environment = process.env) {

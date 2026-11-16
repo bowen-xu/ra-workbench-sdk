@@ -81,7 +81,7 @@ export async function buildInputFingerprint(root, {kind, args = [], inputs = [],
     fingerprint.update(String(stat?.mode ?? "deleted"));
     if (stat) fingerprint.update(hash(await fs.readFile(path.join(root, file))));
   }
-  if (["workbench-web", "preview-host"].includes(kind)) {
+  if (["workbench-web", "preview-host", "api-test-host"].includes(kind)) {
     for (const name of [".env", ".env.local", ".env.production", ".env.production.local"]) {
       const bytes = await fs.readFile(path.join(root, "apps/web", name)).catch(error => {
         if (error.code === "ENOENT") return undefined;

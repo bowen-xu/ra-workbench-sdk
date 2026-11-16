@@ -128,3 +128,16 @@ test("source archive builds exclude generated resources while tracking authored 
   assert.notEqual(changed.buildKey, first.buildKey);
   assert.equal(count(), 2);
 }));
+
+test("native API test host packages include frontend environment inputs", () => fixture(async ({root, options, build, count}) => {
+  await fs.mkdir(path.join(root, "apps/web"), {recursive: true});
+  const environment = path.join(root, "apps/web/.env.production.local");
+  await fs.writeFile(environment, "VITE_SYNTHETIC_TEST=one\n");
+  const selected = {...options, kind: "api-test-host"};
+  const first = await withCachedBuild(selected, build);
+  assert.equal((await withCachedBuild(selected, build)).cacheHit, true);
+  await fs.writeFile(environment, "VITE_SYNTHETIC_TEST=two\n");
+  const changed = await withCachedBuild(selected, build);
+  assert.notEqual(changed.buildKey, first.buildKey);
+  assert.equal(count(), 2);
+}));

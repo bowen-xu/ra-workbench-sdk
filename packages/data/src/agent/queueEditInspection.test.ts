@@ -38,9 +38,13 @@ it.each(hosts)("$name inspects only the original edit and returns the historical
   expect(invoke.mock.calls.every(call => !String(call[0]).includes("agent_edit_"))).toBe(true);
 });
 
-it.each(hosts.filter(host=>["writing","note","readingNote"].includes(host.name)))("$name carries the epoch through edit and exact status lookup", async host=>{
+it.each(hosts.filter(host=>["writing","paper","note","readingNote"].includes(host.name)))("$name carries the epoch through edit and exact status lookup", async host=>{
   const original={...host.request,expectedEpoch:epoch}, value=result(original);
-  const response=host.name==="writing"?{...value.status.queue,manuscriptId:m}:{...value.status.queue,scope:host.request.scope};
+  const response = host.name === "writing"
+    ? {...value.status.queue, manuscriptId: m}
+    : host.name === "paper"
+      ? {...value.status.queue, paperId: host.request.paperId}
+      : {...value.status.queue, scope: host.request.scope};
   const invoke=vi.fn(async (name:string,_args:Record<string,unknown>)=>name.startsWith("agent_edit_")?response:value),gateway=host.create(invoke);
   await gateway.edit(original);expect(await gateway.inspectEdit(original)).toEqual(value);
   expect(invoke.mock.calls.map(([name])=>name)).toEqual([`agent_edit_${host.name==="readingNote"?"note":host.name}_input_queue`,command(host.name)]);

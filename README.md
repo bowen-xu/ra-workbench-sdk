@@ -17,7 +17,7 @@ pnpm install --frozen-lockfile
 pnpm build
 pnpm typecheck
 pnpm test:contracts
-pnpm test -- packages/core/src/notes/noteCatalogText.test.ts
+pnpm test packages/core/src/notes/noteCatalogText.test.ts
 pnpm test:native
 ```
 

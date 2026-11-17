@@ -1,20 +1,5 @@
 {
   "name": "@research-assistant/writing",
-  "version": "0.1.0",
   "private": true,
-  "type": "module",
-  "exports": {
-    ".": "./src/index.ts",
-    "./citation-key": "./src/citationKey.ts",
-    "./compile-result": "./src/compileResult.ts",
-    "./manuscript": "./src/manuscript.ts",
-    "./manuscript-path": "./src/manuscriptPath.ts"
-  },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": { "@research-assistant/core": "workspace:*" },
-  "devDependencies": {
-    "typescript": "5.9.3"
-  }
+  "type": "module"
 }

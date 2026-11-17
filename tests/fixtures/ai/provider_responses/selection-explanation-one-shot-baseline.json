@@ -1,7 +1,0 @@
-{
-  "allowedEvidenceItemIds": ["ev-zh-1", "ev-zh-2"],
-  "payload": {
-    "answer": "稀疏门控会减少模型参数，并且必然提高稳定性。",
-    "pageCitations": ["第 2 页", "第 3 页"]
-  }
-}

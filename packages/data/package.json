@@ -1,26 +1,5 @@
 {
   "name": "@research-assistant/data",
-  "version": "0.1.0",
   "private": true,
-  "type": "module",
-  "exports": {
-    "./hbs": "./src/hbs/index.ts",
-    ".": "./src/index.ts",
-    "./notes": "./src/notes/index.ts",
-    "./literature": "./src/literature.ts",
-    "./collections": "./src/collections.ts",
-    "./agent": "./src/agent/index.ts",
-    "./nal": "./src/nal.ts",
-    "./writing": "./src/writing/index.ts"
-  },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@research-assistant/core": "workspace:*",
-    "@research-assistant/writing": "workspace:*"
-  },
-  "devDependencies": {
-    "typescript": "5.9.3"
-  }
+  "type": "module"
 }

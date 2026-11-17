@@ -1,0 +1,5 @@
+{
+  "name": "@research-assistant/workbench-backend-sdk",
+  "private": true,
+  "type": "module"
+}

@@ -1,43 +1,5 @@
 {
   "name": "@research-assistant/core",
-  "version": "0.1.0",
   "private": true,
-  "type": "module",
-  "exports": {
-    "./hbs": "./src/hbs/index.ts",
-    "./prompts/*": "./prompts/*",
-    "./source": "./src/sourceNavigation.ts",
-    "./dictionary": "./src/dictionary.ts",
-    "./document-review": "./src/document-review.ts",
-    ".": "./src/index.ts",
-    "./citation": "./src/citation.ts",
-    "./content-trust": "./src/contentTrust.ts",
-    "./ai": "./src/ai/index.ts",
-    "./evidence": "./src/evidence.ts",
-    "./knowledge": "./src/knowledge/index.ts",
-    "./literature": "./src/literature.ts",
-    "./notes": "./src/notes/index.ts",
-    "./project": "./src/project.ts",
-    "./reader": "./src/reader/index.ts",
-    "./synthesis": "./src/synthesis/index.ts",
-    "./collections": "./src/collections/index.ts",
-    "./pdf-view": "./src/pdf-view/index.ts",
-    "./agent": "./src/agent/index.ts",
-    "./nal": "./src/nal/index.ts",
-    "./structured-resources": "./src/structuredResources.ts",
-    "./ai/provider-defaults": "./src/ai/llm-provider-defaults.json"
-  },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "typescript": "5.9.3"
-  },
-  "dependencies": {
-    "@citation-js/core": "0.8.2",
-    "@citation-js/plugin-bibtex": "0.8.2",
-    "@citation-js/plugin-csl": "0.8.2",
-    "@citation-js/plugin-ris": "0.8.2",
-    "daff": "1.4.2"
-  }
+  "type": "module"
 }
